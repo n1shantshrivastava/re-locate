@@ -1,1 +1,4 @@
 .idea
+Config/database.php
+Config/core.php
+app/tmp
