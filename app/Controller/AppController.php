@@ -44,7 +44,7 @@ class AppController extends Controller {
         parent::beforeFilter();
         $this->applicationName = Configure::read('APPLICATION_NAME');
 
-        $this->Auth->loginRedirect = array('controller' => 'users', 'action' => 'index');
+        $this->Auth->loginRedirect = array('controller' => 'users', 'action' => 'dashboard');
         $this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login');
         $this->Auth->authError = 'You are not authorized user, please enter username and password.';
         $this->Auth->authenticate = array(
@@ -52,9 +52,6 @@ class AppController extends Controller {
                 'scope' => array('User.is_active' => 1, 'User.is_verified' => 1,)
             )
         );
-        if ($this->Auth->user()) {
-            pr($this->Auth->user());
-        }
     }
 
     public function beforeRender() {

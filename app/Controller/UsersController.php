@@ -29,14 +29,15 @@ class UsersController extends AppController {
         }
 
         if ($this->request->is('post') && !empty($this->request->data)) {
-            pr($this->request->data);exit;
             if ($loggedInUserData) {
                 $this->redirect($this->Auth->redirect());
             } else {
                 $this->Session->setFlash(__('Username or password is incorrect'), 'default', array(), 'auth');
             }
         }
-
     }
 
+    public function logout() {
+        $this->redirect($this->Auth->logout());
+    }
 }
