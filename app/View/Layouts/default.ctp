@@ -1,14 +1,10 @@
 <?php
 /**
- *
  * PHP 5
- *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright 2005-2011, Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
- *
  * @copyright     Copyright 2005-2011, Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.View.Layouts
@@ -18,7 +14,7 @@
 $cakeDescription = __d('cake_dev', $appName);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <?php echo $this->Html->charset(); ?>
@@ -73,7 +69,32 @@ $cakeDescription = __d('cake_dev', $appName);
                 $('#NotifyMessage').hide();
             }
         });
+        function calculatePositions(containerId) {
+
+            var bigCircleId = "#b" + containerId;
+            var resultCircleClass = ".r" + containerId;
+            var radius = 75 - 15 - 1; //outer circle radius - result circle radius - offset
+            var num = $(bigCircleId).children().length;
+            var dividers = 360 / num;
+            var center = 60; // radius of middle circle + 5(offset)
+            var theta = 0.0;
+            var radians = dividers * (Math.PI / 180);
+
+            for (var i = 0; i < num; i++) {
+
+                var x = Math.round(center + radius * Math.cos(theta));
+                var y = Math.round(center + radius * Math.sin(theta));
+                var M = $(".project-resource").children();
+
+                $(bigCircleId + " :nth-child(" + (i + 1) + ")").not(".project-resource, .slider, .ui-slider-range-min, .ui-slider-handle").css({'left':x, 'top':y});
+
+                theta += radians;
+            }
+            TweenLite.to($(resultCircleClass), 0.1, {css:{autoAlpha:1, scaleX:1, scaleY:1}});
+
+        }
     </script>
+
 </head>
 <body>
 <div class="navbar navbar-fixed-top">

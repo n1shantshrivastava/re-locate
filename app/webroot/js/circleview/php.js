@@ -6,14 +6,14 @@ $(document).ready(function () {
 
         $('.objectBox-php').masonry({
             // options
-            itemSelector:'.object',
+            itemSelector:'.draggableObjects-php',
             columnWidth:10,
             cornerStampSelector:''
         });
 
         $('.circleBox-php').masonry({
             // options
-            itemSelector:'.object',
+            itemSelector:'.draggableObjects-php',
             columnWidth:10,
             cornerStampSelector:'.corner-stamp'
         });
