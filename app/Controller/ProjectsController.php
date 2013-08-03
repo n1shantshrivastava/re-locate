@@ -17,7 +17,16 @@ class ProjectsController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('*');
+    }
+
+    public function beforeRender(){
+        parent::beforeRender();
+        if($this->loggedInUserId() != ''){
+            $tab = 'projects';
+        } else {
+            $tab = '';
+        }
+        $this->set(compact('tab'));
     }
 
 /**

@@ -34,7 +34,7 @@ jQuery(function () {
         message:"Please enter the first name"
     });
     jQuery("#UserFirstName").validate({
-        expression:"if ((/[0-9]/.test(VAL)) return false; else return true;",
+        expression:"if (VAL.match(/^[a-zA-Z ]+$/)) return true; else return false;",
         message:"Please enter valid first name"
     });
 
@@ -43,7 +43,7 @@ jQuery(function () {
         message:"Please enter the last name"
     });
     jQuery("#UserLastName").validate({
-        expression:"if ((/[0-9]/.test(VAL)) return false; else return true;",
+        expression:"if (VAL.match(/^[a-zA-Z ]+$/)) return true; else return false;",
         message:"Please enter valid first name"
     });
 
