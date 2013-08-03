@@ -121,7 +121,6 @@ class ProjectsController extends AppController {
             throw new NotFoundException(__('Invalid project'));
         }
         if (($this->request->is('post') || $this->request->is('put') && !empty($this->request->data))) {
-
             $this->request->data['Project']['start_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['start_date']));
             $this->request->data['Project']['end_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['end_date']));
 
