@@ -159,11 +159,7 @@ class ProjectsController extends AppController {
      * @param string $id
      * @return void
      */
-    public
-    function delete($id = null) {
-        if (!$this->request->is('post')) {
-            throw new MethodNotAllowedException();
-        }
+    public function delete($id = null) {
         $this->Project->id = $id;
         if (!$this->Project->exists()) {
             throw new NotFoundException(__('Invalid project'));
