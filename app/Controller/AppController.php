@@ -38,6 +38,8 @@ class AppController extends Controller {
     public $applicationName = '';
     public $loggedInUserId = '';
     public $loggedInUserName = '';
+    public $loggedInUserFirstName = '';
+    public $loggedInUserLastName = '';
     public $loggedInUserRole = '';
 
     public function beforeFilter() {
@@ -60,8 +62,14 @@ class AppController extends Controller {
 
         $loggedInUserId = $this->loggedInUserId = $this->loggedInUserId();
         $loggedInUserRole = $this->loggedInUserRole = $this->loggedInUserRole();
+        $loggedInUserName = $this->loggedInUserName = $this->loggedInUserName();
+        $loggedInUserFirstName = $this->loggedInUserFirstName = $this->loggedInUserFirstName();
+        $loggedInUserLastName = $this->loggedInUserLastName = $this->loggedInUserLastName();
 
-        $this->set(compact('appName', 'loggedInUserId', 'loggedInUserRole'));
+        $this->set(compact(
+            'appName', 'loggedInUserId', 'loggedInUserRole',
+            'loggedInUserLastName','loggedInUserFirstName','loggedInUserName'
+        ));
     }
 
     public function loggedInUserId() {
@@ -70,5 +78,17 @@ class AppController extends Controller {
 
     public function loggedInUserRole() {
         return $this->Auth->user('role_id') != '' ? $this->Auth->user('role_id') : false;
+    }
+
+    public function loggedInUserName() {
+        return $this->Auth->user('username') != '' ? $this->Auth->user('username') : false;
+    }
+
+    public function loggedInUserFirstName() {
+        return $this->Auth->user('first_name') != '' ? $this->Auth->user('first_name') : false;
+    }
+
+    public function loggedInUserLastName() {
+        return $this->Auth->user('last_name') != '' ? $this->Auth->user('last_name') : false;
     }
 }

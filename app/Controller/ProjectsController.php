@@ -84,6 +84,7 @@ class ProjectsController extends AppController {
             $this->request->data['Project']['end_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['end_date']));
 
             $projectResourceRequirement = $this->request->data['ProjectResourceRequirements'];
+            print_r($this->request->data); die;
             $this->Project->create();
             if ($this->Project->save($this->request->data)) {
                 $this->log('>>>> SUCCESS : Saved Project Data');
