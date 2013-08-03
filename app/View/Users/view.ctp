@@ -73,7 +73,7 @@
                             ),
                             __('You are about to delete %s', '"' . $user['User']['first_name'] . ' ' . $user['User']['last_name'] . '", Are you sure?')
                         );
-                        echo $this->Html->link(__('Back'), array('action' => 'dashboard'), array('class' => 'btn')); ?>
+                        echo $this->Html->link(__('Back'), array('action' => 'index'), array('class' => 'btn')); ?>
                 </div>
             </div>
         </div>

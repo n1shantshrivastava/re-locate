@@ -29,7 +29,7 @@ class UsersController extends AppController {
      */
     public function index() {
         if($this->loggedInUserId() != '' && $this->loggedInUserRole() == 1){
-            $this->redirect(array('action' => 'dashboard'));
+            $this->redirect(array('action' => 'all_users'));
         } else {
             $this->redirect(array('action' => 'login'));
         }
@@ -48,12 +48,13 @@ class UsersController extends AppController {
             if ($loggedInUserData) {
                 $this->redirect($this->Auth->redirect());
             } else {
-                $this->Session->setFlash(__('Username or password is incorrect'), 'default', array(), 'auth');
+                $this->Session->setFlash(__('Username or password is incorrect'), 'set_flash');
             }
         }
     }
 
     public function logout() {
+        $this->Session->setFlash(__('You are successfully logged out from the system'), 'set_flash');
         $this->redirect($this->Auth->logout());
     }
 
@@ -92,10 +93,10 @@ class UsersController extends AppController {
         if ($this->request->is('post')) {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('The user has been saved'));
+                $this->Session->setFlash(__('The user has been saved'), 'set_flash');
                 $this->redirect('/');
             } else {
-                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+                $this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'set_flash');
             }
         }
         $roles = $this->User->Role->getList();
@@ -116,10 +117,10 @@ class UsersController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('The user has been saved'));
+                $this->Session->setFlash(__('The user has been saved'), 'set_flash');
                 $this->redirect('/');
             } else {
-                $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+                $this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'set_flash');
             }
         } else {
             $this->request->data = $this->User->read(null, $id);
@@ -143,10 +144,10 @@ class UsersController extends AppController {
             throw new NotFoundException(__('Invalid user'));
         }
         if ($this->User->delete()) {
-            $this->Session->setFlash(__('User deleted'));
+            $this->Session->setFlash(__('User deleted'), 'set_flash');
             $this->redirect('/');
         }
-        $this->Session->setFlash(__('User was not deleted'));
+        $this->Session->setFlash(__('User was not deleted'), 'set_flash');
         $this->redirect('/');
     }
 }

@@ -138,7 +138,7 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
 
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">Save changes</button>
-                    <button type="reset" class="btn">Cancel</button>
+                    <a href="/projects/all_projects" class="btn">Cancel</a>
                 </div>
 
                 <?php echo $this->Form->end(); ?>
