@@ -1,49 +1,68 @@
-<script type="text/javascript">
-    //config -
-    //simulate this db to be in your server--------
-    objectDatabasephp=[{title:"Hello",image:"",url:""},
-        {title:"Sachin",image:"https://lh6.googleusercontent.com/-gFSf20CDQos/UKyfK_76ZeI/AAAAAAAAAMc/yTWayUoqA1k/s128/sachin.jpg",url:""},
-        {title:"Batman",image:"https://lh5.googleusercontent.com/-4TaI4pvaUzo/UMX_RLSLFZI/AAAAAAAAAc4/2OADM-Izh8E/s800/bat.png",url:""},
-        {title:"Android in Rain",image:"https://lh3.googleusercontent.com/-CFI2PBn3xaE/UMX_RUigPTI/AAAAAAAAAc8/VApDqnIDvEQ/s800/android_bot.png",url:""},
-        {title:"Delhi Belli",image:"https://lh6.googleusercontent.com/-SkmrjH6gxjQ/UMX_UEpoWoI/AAAAAAAAAdQ/VPrPpyxfVLE/s800/db.png",url:""},
-        {title:"Code Handling",image:"https://lh3.googleusercontent.com/-jr-SH35yoRw/UL4ANu3ifYI/AAAAAAAAAaA/1-VHYf-Dvgo/s800/ch.png",url:"http://www.codehandling.com"}];
 
-    objectDatabaseiphone=[{title:"Hello",image:"",url:""},
-        {title:"Sachin",image:"https://lh6.googleusercontent.com/-gFSf20CDQos/UKyfK_76ZeI/AAAAAAAAAMc/yTWayUoqA1k/s128/sachin.jpg",url:""},
-        {title:"Batman",image:"https://lh5.googleusercontent.com/-4TaI4pvaUzo/UMX_RLSLFZI/AAAAAAAAAc4/2OADM-Izh8E/s800/bat.png",url:""},
-        {title:"Android in Rain",image:"https://lh3.googleusercontent.com/-CFI2PBn3xaE/UMX_RUigPTI/AAAAAAAAAc8/VApDqnIDvEQ/s800/android_bot.png",url:""},
-        {title:"Delhi Belli",image:"https://lh6.googleusercontent.com/-SkmrjH6gxjQ/UMX_UEpoWoI/AAAAAAAAAdQ/VPrPpyxfVLE/s800/db.png",url:""},
-        {title:"Code Handling",image:"https://lh3.googleusercontent.com/-jr-SH35yoRw/UL4ANu3ifYI/AAAAAAAAAaA/1-VHYf-Dvgo/s800/ch.png",url:"http://www.codehandling.com"}];
-
-    //------------------------------------------------
-</script>
 <div class="container">
     <!-- Forms
    ================================================== -->
     <section id="forms">
-        <input type="hidden" name="project_id" id="projectId" value="<?php echo h($project['Project']['id']); ?>" />
+        <input type="hidden" name="project_id" id="projectId" value="<?php echo h($project['Project']['id']); ?>"/>
+
         <div class="row">
             <div class="span10 offset1">
                 <div class="form-horizontal well">
-                <legend><?php echo h($project['Project']['project_name']); ?></legend>
-                    <div class="mainCircleContainer mainContainer-php" id="1" style="">
-                        <!-- <div id="dragWindow"></div>-->
-                        <div id="s1" class="smallCircle smallCircle-php">
-                            <label id="circleLabel">Web Links</label>
-                        </div>
-                        <div id="b1" class="bigCircle bigCircle-php">
+                    <legend><?php echo h($project['Project']['project_name']); ?></legend>
+                    <?php
+                    if (!empty($project['ProjectTechnology'])) {
+                        $base_url = Configure::read('base_url');
+                        foreach ($project['ProjectTechnology'] as $keyTechnology => $technology) {
+                            $userTechnologies = array();
+                            $imagePath = $base_url . '/img/logos/' . $technology['Technology']['slug'] . '.jpg';
+                            if (!empty($technology['User'])) {
+                                foreach ($technology['User'] as $userKey => $userData) {
+                                    $username = $userData['User']['first_name'] . ' ' . $userData['User']['last_name'];
+                                    $userTechnologies[] = array('title' => $username, 'image' => $imagePath, 'url' => $userData['User']['id']);
+                                }
+                            }
+                            $userTechnologiesEncode = json_encode($userTechnologies);
+                            ?>
+                            <script type="text/javascript">
+                                    <?php echo 'objectDatabase' . str_replace('-', '', $technology['Technology']['slug']) . '=' . $userTechnologiesEncode; ?>
+                            </script>
+                            <script src="<?php echo $base_url; ?>/js/circleview/<?php echo $technology['Technology']['slug'] . '.js'?>"></script>
+                            <div class="">
+                                <div
+                                    class="mainCircleContainer mainContainer-<?php echo $technology['Technology']['slug'] ?>"
+                                    id="<?php echo $technology['Technology']['id'];?>" style="">
+                                    <!-- <div id="dragWindow"></div>-->
+                                    <div id="s<?php echo $technology['Technology']['id'];?>"
+                                         class="smallCircle smallCircle-<?php echo $technology['Technology']['slug'] ?>">
+                                        <label
+                                            id="circleLabel"><?php echo $technology['Technology']['stream_name'];?></label>
+                                    </div>
+                                    <div id="b<?php echo $technology['Technology']['id'];?>"
+                                         class="bigCircle bigCircle-<?php echo $technology['Technology']['slug'] ?>">
 
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <div >
-                        <div id="objectBox" class="objectBox-php">
-                            <div class="corner-stamp" id="add_box"></div>
-                        </div>
-                        <div id="circleBox" class="circleBox-php">
-                            <div class="corner-stamp" id="show_all-php">show all <br/>objects</div>
-                        </div>
-                    </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div>
+                                    <div id="objectBox"
+                                         class="objectBox-<?php echo $technology['Technology']['slug'] ?>">
+                                        <div class="corner-stamp" id="add_box"></div>
+                                    </div>
+                                    <div id="circleBox"
+                                         class="circleBox-<?php echo $technology['Technology']['slug'] ?>">
+                                        <div class="corner-stamp"
+                                             id="show_all-<?php echo $technology['Technology']['slug'] ?>">show all
+                                            <br/>objects
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <?php
+                        }
+                    }
+                    ?>
+
                 </div>
             </div>
         </div>
@@ -131,7 +150,8 @@
 <!--	</tr>-->
 <!--	--><?php
 //		$i = 0;
-//		foreach ($project['ProjectResourceRequirement'] as $projectResourceRequirement): ?>
+//		foreach ($project['ProjectResourceRequirement'] as $projectResourceRequirement):
+?>
 <!--		<tr>-->
 <!--			<td>--><?php //echo $projectResourceRequirement['id'];?><!--</td>-->
 <!--			<td>--><?php //echo $projectResourceRequirement['project_id'];?><!--</td>-->
@@ -170,7 +190,8 @@
 <!--	</tr>-->
 <!--	--><?php
 //		$i = 0;
-//		foreach ($project['ProjectTechnology'] as $projectTechnology): ?>
+//		foreach ($project['ProjectTechnology'] as $projectTechnology):
+?>
 <!--		<tr>-->
 <!--			<td>--><?php //echo $projectTechnology['id'];?><!--</td>-->
 <!--			<td>--><?php //echo $projectTechnology['project_id'];?><!--</td>-->
