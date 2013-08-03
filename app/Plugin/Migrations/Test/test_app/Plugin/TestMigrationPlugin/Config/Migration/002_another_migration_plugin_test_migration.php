@@ -1,5 +1,5 @@
 <?php
-class M4af6d40056b04408808500cb58157726 extends CakeMigration {
+class AnotherMigrationPluginTestMigration extends CakeMigration {
 
 /**
  * Migration description
@@ -7,7 +7,7 @@ class M4af6d40056b04408808500cb58157726 extends CakeMigration {
  * @var string
  * @access public
  */
-	public $description = 'Version 001 (schema dump) of TestMigrationPlugin';
+	public $description = 'Version 002 (another test) of TestMigrationPlugin';
 
 /**
  * Actions to be performed
