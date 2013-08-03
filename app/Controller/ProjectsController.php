@@ -82,11 +82,25 @@ class ProjectsController extends AppController {
             $this->request->data['Project']['start_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['start_date']));
             $this->request->data['Project']['end_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['end_date']));
 
+            $projectResourceRequirement = $this->request->data['ProjectResourceRequirements'];
             $this->Project->create();
             if ($this->Project->save($this->request->data)) {
-                $this->Session->setFlash(__('The project has been saved'));
-                $this->redirect(array('action' => 'index'));
+                $this->log('>>>> SUCCESS : Saved Project Data');
+                $projectId = $this->Project->id;
+
+                foreach ($projectResourceRequirement as $key => $value) {
+                    $projectResourceRequirement[$key]['project_id'] = $projectId;
+                }
+
+                if ($this->Project->ProjectResourceRequirement->saveAll($projectResourceRequirement)) {
+                    $this->log('>>>> SUCCESS : Saved ProjectResourceRequirement Data');
+                    $this->Session->setFlash(__('The project has been saved'));
+                    $this->redirect(array('action' => 'index'));
+                } else {
+                    $this->log('>>>> FAILED : Unable to save ProjectResourceRequirement Data');
+                }
             } else {
+                $this->log('>>>> FAILED : Unable to save Project Data');
                 $this->Session->setFlash(__('The project could not be saved. Please, try again.'));
             }
         }

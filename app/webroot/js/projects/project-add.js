@@ -5,7 +5,7 @@ $(document).ready(function () {
         project_requirements = parseInt(project_requirements) + 1;
         var requirements_html = '<div class="requirements clearfix">';
         requirements_html += '<span class="pull-left">';
-        requirements_html += '<select name="data[ProjectResourceTechnologies][' + project_requirements + '][technology_id]" id="ProjectResourceTechnologies' + project_requirements + 'TechnologyId">';
+        requirements_html += '<select name="data[ProjectResourceRequirements][' + project_requirements + '][technology_id]" id="ProjectResourceRequirements' + project_requirements + 'TechnologyId">';
         requirements_html += '<option value="">Select Technology</option>';
 
         $.ajax({
@@ -23,7 +23,7 @@ $(document).ready(function () {
         requirements_html += '</select></span>';
         requirements_html += '<span class="pull-left">';
 
-        requirements_html += '<select name="data[ProjectResourceTechnologies][' + project_requirements + '][required_percentage]" id="ProjectResourceTechnologies' + project_requirements + 'RequiredPercentage">';
+        requirements_html += '<select name="data[ProjectResourceRequirements][' + project_requirements + '][required_percentage]" id="ProjectResourceRequirements' + project_requirements + 'RequiredPercentage">';
         requirements_html += '<option value="">Allocation percentage</option>';
         for (var percentageCount = 5; percentageCount <= 100; percentageCount = percentageCount + 5) {
             requirements_html += '<option value="' + percentageCount + '">' + percentageCount + '</option>';
@@ -32,7 +32,7 @@ $(document).ready(function () {
 
         requirements_html += '<span class="pull-left">';
 
-        requirements_html += '<select name="data[ProjectResourceTechnologies][' + project_requirements + '][number_of_resources]" id="ProjectResourceTechnologies' + project_requirements + 'NumberOfResources">';
+        requirements_html += '<select name="data[ProjectResourceRequirements][' + project_requirements + '][number_of_resources]" id="ProjectResourceRequirements' + project_requirements + 'NumberOfResources">';
         requirements_html += '<option value="">Number of resources</option>';
         for (var percentageAllocation = 1; percentageAllocation <= 10; percentageAllocation++) {
             requirements_html += '<option value="' + percentageAllocation + '">' + percentageAllocation + '</option>';
