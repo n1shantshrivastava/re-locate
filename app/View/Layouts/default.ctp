@@ -29,11 +29,16 @@ $cakeDescription = __d('cake_dev', $appName);
     <?php
     echo $this->Html->meta('icon');
 
-    echo $this->Html->css(array("flatly.bootstrap"));
+    echo $this->Html->css(array(
+        "flatly.bootstrap" , 'developer' , 'jquery-ui-1.8.22.custom'));
 
     echo $this->fetch('meta');
     echo $this->fetch('css');
-    echo $this->Html->script(array('jquery-1.7.2.min', 'bootstrap', 'jquery.validate', 'jquery.validation.functions'));
+    echo $this->Html->script(array(
+        'jquery-1.7.2.min', 'bootstrap', 'jquery.validate', 'jquery.validation.functions' ,
+        'jquery.ui.core' , 'jquery.ui.datepicker',
+        'developer'
+    ));
     echo $this->fetch('script');
     ?>
     <style type="text/css">
