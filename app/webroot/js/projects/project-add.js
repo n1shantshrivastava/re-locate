@@ -32,7 +32,7 @@ $(document).ready(function () {
 
         requirements_html += '<span class="pull-left">';
 
-        requirements_html += '<select name="data[ProjectResourceRequirements][' + project_requirements + '][number_of_resources]" id="ProjectResourceRequirements' + project_requirements + 'NumberOfResources">';
+        requirements_html += '<select name="data[ProjectResourceRequirements][' + project_requirements + '][no_of_resources]" id="ProjectResourceRequirements' + project_requirements + 'NoOfResources">';
         requirements_html += '<option value="">Number of resources</option>';
         for (var percentageAllocation = 1; percentageAllocation <= 10; percentageAllocation++) {
             requirements_html += '<option value="' + percentageAllocation + '">' + percentageAllocation + '</option>';

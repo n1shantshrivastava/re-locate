@@ -7,6 +7,6 @@ $(document).ready(function () {
         }
     });
     $('#end').datepicker({
-        dateFormat:'dd-mm-YYYY'
+        dateFormat:'dd-mm-yy'
     });
 });
