@@ -33,12 +33,12 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
+    public $components = array('Auth', 'Session');
+
     public $applicationName = '';
     public $loggedInUserId = '';
     public $loggedInUserName = '';
     public $loggedInUserRole = '';
-
-    public $components = array('Auth', 'Session');
 
     public function beforeFilter() {
         parent::beforeFilter();
@@ -61,7 +61,7 @@ class AppController extends Controller {
         $loggedInUserId = $this->loggedInUserId = $this->loggedInUserId();
         $loggedInUserRole = $this->loggedInUserRole = $this->loggedInUserRole();
 
-        $this->set(compact('appName','loggedInUserId','loggedInUserRole'));
+        $this->set(compact('appName', 'loggedInUserId', 'loggedInUserRole'));
     }
 
     public function loggedInUserId() {

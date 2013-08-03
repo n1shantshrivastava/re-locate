@@ -63,7 +63,28 @@ class Project extends AppModel {
 
     public function getProjectDataById($id){
         $this->recursive=2;
-        return $this->read(null, $id);
+        $this->ProjectResourceRequirement->unbindModel(array('belongsTo'=>array('Project','Technology')));
+        $this->ProjectTechnology->unbindModel(array('belongsTo'=>array('Project')));
+        $projectData =  $this->read(null, $id);
+        if(!empty($projectData)){
+            $userIds = array();
+            if(!empty($projectData['ProjectsUser'])){
+                foreach($projectData['ProjectsUser'] as $projectUser){
+                    $userIds[] = $projectUser['user_id'];
+                }
+            }
+            foreach($projectData['ProjectTechnology'] as $key => $projectTechnology){
+                if(!empty($userIds)){
+                    $conditions = array('User.technology_id'=>$projectTechnology['technology_id'],array('NOT'=>array('User.id'=>$userIds)));
+                }else{
+                    $conditions = array('User.technology_id'=>$projectTechnology['technology_id']);
+                }
+                $this->ProjectsUser->User->recursive = -1;
+                $resourceData = $this->ProjectsUser->User->find('all', array('conditions'=>$conditions,'fields'=>array('id','first_name','last_name')));
+                $projectData['ProjectTechnology'][$key]['User'] = $resourceData;
+            }
+        }
+        return $projectData;
     }
 
     public function getActiveProjects(){
