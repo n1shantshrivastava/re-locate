@@ -30,4 +30,10 @@ class Role extends AppModel {
 		)
 	);
 
+
+    public function getList(){
+        return $this->find('list',array(
+            'fields'=>array('id','role')
+        ));
+    }
 }

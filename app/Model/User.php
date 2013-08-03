@@ -36,19 +36,19 @@ class User extends AppModel {
 			'order' => ''
 		)
 	);
-    public $hasMany = array(
-        'ProjectUser' => array(
-            'className' => 'ProjectUser',
-            'foreignKey' => 'user_id',
-            'dependent' => true,
-            'conditions' => '',
-            'fields' => '',
-            'order' => '',
-            'limit' => '',
-            'offset' => '',
-            'exclusive' => '',
-            'finderQuery' => '',
-            'counterQuery' => ''
-        )
-    );
+//    public $hasMany = array(
+//        'ProjectUser' => array(
+//            'className' => 'ProjectUser',
+//            'foreignKey' => 'user_id',
+//            'dependent' => true,
+//            'conditions' => '',
+//            'fields' => '',
+//            'order' => '',
+//            'limit' => '',
+//            'offset' => '',
+//            'exclusive' => '',
+//            'finderQuery' => '',
+//            'counterQuery' => ''
+//        )
+//    );
 }
