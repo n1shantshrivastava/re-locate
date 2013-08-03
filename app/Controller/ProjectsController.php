@@ -50,7 +50,9 @@ class ProjectsController extends AppController {
 		if (!$this->Project->exists()) {
 			throw new NotFoundException(__('Invalid project'));
 		}
-		$this->set('project', $this->Project->read(null, $id));
+        $this->Project->recursive=2;
+        $project = $this->Project->read(null, $id);
+		$this->set(compact('project'));
 	}
 
 /**
@@ -68,9 +70,9 @@ class ProjectsController extends AppController {
 				$this->Session->setFlash(__('The project could not be saved. Please, try again.'));
 			}
 		}
-        $technologyData = $this->Project->getTechnologyData();
-//        pr($technologyData);
-        $this->set(compact('technologyData'));
+        $technologies = $this->Project->getTechnologyData();
+        pr($technologies);
+        $this->set(compact('technologies'));
 	}
 
 /**
