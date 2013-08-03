@@ -67,8 +67,6 @@ class ProjectsController extends AppController {
         //        $this->Project->recursive=2;
         //        $project = $this->Project->read(null, $id);
         $project = $this->Project->getProjectDataById($id);
-//                pr($project);
-//                die;
         $this->set(compact('project'));
     }
 
@@ -97,8 +95,8 @@ class ProjectsController extends AppController {
 
                 $technologyAlloted = array_unique($technologyAlloted);
 
-                foreach($technologyAlloted as $alloted) {
-                    if($this->Project->ProjectTechnology->save(array('project_id' => $projectId,'technology_id' => $alloted))) {
+                foreach ($technologyAlloted as $alloted) {
+                    if ($this->Project->ProjectTechnology->save(array('project_id' => $projectId, 'technology_id' => $alloted))) {
                         $this->log('>>>> SUCCESS | ProjectTechnology Saved for ProjectId : ' . $projectId . "Technology Id : " . $alloted);
                     } else {
                         $this->log('>>>> FAILED | ProjectTechnology could not be Saved for ProjectId : ' . $projectId . "Technology Id : " . $alloted);
