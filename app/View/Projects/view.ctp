@@ -1,14 +1,14 @@
 <script type="text/javascript">
     //config -
     //simulate this db to be in your server--------
-    objectDatabase=[{title:"Hello",image:"",url:""},
+    objectDatabasephp=[{title:"Hello",image:"",url:""},
         {title:"Sachin",image:"https://lh6.googleusercontent.com/-gFSf20CDQos/UKyfK_76ZeI/AAAAAAAAAMc/yTWayUoqA1k/s128/sachin.jpg",url:""},
         {title:"Batman",image:"https://lh5.googleusercontent.com/-4TaI4pvaUzo/UMX_RLSLFZI/AAAAAAAAAc4/2OADM-Izh8E/s800/bat.png",url:""},
         {title:"Android in Rain",image:"https://lh3.googleusercontent.com/-CFI2PBn3xaE/UMX_RUigPTI/AAAAAAAAAc8/VApDqnIDvEQ/s800/android_bot.png",url:""},
         {title:"Delhi Belli",image:"https://lh6.googleusercontent.com/-SkmrjH6gxjQ/UMX_UEpoWoI/AAAAAAAAAdQ/VPrPpyxfVLE/s800/db.png",url:""},
         {title:"Code Handling",image:"https://lh3.googleusercontent.com/-jr-SH35yoRw/UL4ANu3ifYI/AAAAAAAAAaA/1-VHYf-Dvgo/s800/ch.png",url:"http://www.codehandling.com"}];
 
-    objectDatabaseROR=[{title:"Hello",image:"",url:""},
+    objectDatabaseiphone=[{title:"Hello",image:"",url:""},
         {title:"Sachin",image:"https://lh6.googleusercontent.com/-gFSf20CDQos/UKyfK_76ZeI/AAAAAAAAAMc/yTWayUoqA1k/s128/sachin.jpg",url:""},
         {title:"Batman",image:"https://lh5.googleusercontent.com/-4TaI4pvaUzo/UMX_RLSLFZI/AAAAAAAAAc4/2OADM-Izh8E/s800/bat.png",url:""},
         {title:"Android in Rain",image:"https://lh3.googleusercontent.com/-CFI2PBn3xaE/UMX_RUigPTI/AAAAAAAAAc8/VApDqnIDvEQ/s800/android_bot.png",url:""},
@@ -26,22 +26,22 @@
             <div class="span10 offset1">
                 <div class="form-horizontal well">
                 <legend><?php echo h($project['Project']['project_name']); ?></legend>
-                    <div class="mainCircleContainer mainContainerPHP" id="1" style="">
+                    <div class="mainCircleContainer mainContainer-php" id="1" style="">
                         <!-- <div id="dragWindow"></div>-->
-                        <div id="s1" class="smallCircle">
+                        <div id="s1" class="smallCircle smallCircle-php">
                             <label id="circleLabel">Web Links</label>
                         </div>
-                        <div id="b1" class="bigCircle">
+                        <div id="b1" class="bigCircle bigCircle-php">
 
                         </div>
                     </div>
                     <div class="clearfix"></div>
                     <div >
-                        <div id="objectBox" class="objectBoxPHP">
+                        <div id="objectBox" class="objectBox-php">
                             <div class="corner-stamp" id="add_box"></div>
                         </div>
-                        <div id="circleBox">
-                            <div class="corner-stamp" id="show_all">show all <br/>objects</div>
+                        <div id="circleBox" class="circleBox-php">
+                            <div class="corner-stamp" id="show_all-php">show all <br/>objects</div>
                         </div>
                     </div>
                 </div>
