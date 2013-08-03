@@ -18,7 +18,7 @@ switch($tab){
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a href="/" class="logo brand"></a>
+            <a href="/users/dashboard" class="logo brand"></a>
             <div id="main-menu" class="nav-collapse collapse">
 
 <?php if(!empty($loggedInUserId)){ ?>
@@ -42,12 +42,19 @@ switch($tab){
                 </ul>
                     <?php } ?>
                 <ul id="main-menu-right" class="nav pull-right">
-                    <li>
-                        <?php if(!empty($loggedInUserId)){ ?>
-                        <a href="/users/logout">Logout</a>
-                        <?php } else { ?>
-                        <a href="/users/login">Login</a>
-                        <?php } ?>
+                    <li id="preview-menu" class="dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown" class="dropdown-toggle">Hello <?php echo $loggedInUserFirstName . ' ' . $loggedInUserLastName; ?> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/users/change_password">Change Password</a></li>
+                            <li class="divider"></li>
+                            <li>
+                                <?php if(!empty($loggedInUserId)){ ?>
+                                <a href="/users/logout">Logout</a>
+                                <?php } else { ?>
+                                <a href="/users/login">Login</a>
+                                <?php } ?>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
