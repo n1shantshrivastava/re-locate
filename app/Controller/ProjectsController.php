@@ -14,6 +14,12 @@ class ProjectsController extends AppController {
  */
 	public $helpers = array('Html', 'Form');
 
+
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('*');
+    }
+
 /**
  * index method
  *
@@ -53,6 +59,9 @@ class ProjectsController extends AppController {
 				$this->Session->setFlash(__('The project could not be saved. Please, try again.'));
 			}
 		}
+        $technologyData = $this->Project->getTechnologyData();
+//        pr($technologyData);
+        $this->set(compact('technologyData'));
 	}
 
 /**

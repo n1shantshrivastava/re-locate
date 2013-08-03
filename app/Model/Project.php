@@ -57,4 +57,8 @@ class Project extends AppModel {
         )
 	);
 
+    public function getTechnologyData(){
+        return $this->ProjectTechnology->Technology->find('list',array('fields'=>array('id','stream_name')));
+    }
+
 }
