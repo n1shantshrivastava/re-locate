@@ -14,7 +14,8 @@
                 <th class="actions"><?php echo __('Actions');?></th>
             </tr>
             <?php
-            foreach ($projects as $project): ?>
+            if(count($projects)>0){
+            foreach ($projects as $project){ ?>
                 <tr>
                     <td><?php echo h($project['Project']['project_name']); ?>&nbsp;</td>
                     <td><?php echo h($project['Project']['account_name']); ?>&nbsp;</td>
@@ -32,7 +33,11 @@
                         ); ?>
                     </td>
                 </tr>
-                <?php endforeach; ?>
+                <?php } } else{ ?>
+                <tr>
+                    <td colspan="6">No projects are added yet.</td>
+                </tr>
+                <?php } ?>
         </table>
 
         <?php
