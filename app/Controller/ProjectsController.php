@@ -28,7 +28,6 @@ class ProjectsController extends AppController {
         }
         $this->set(compact('tab'));
     }
-
     /**
      * index method
      *
@@ -50,8 +49,11 @@ class ProjectsController extends AppController {
         if (!$this->Project->exists()) {
             throw new NotFoundException(__('Invalid project'));
         }
-        $this->Project->recursive = 2;
-        $project = $this->Project->read(null, $id);
+        //        $this->Project->recursive=2;
+        //        $project = $this->Project->read(null, $id);
+        $project = $this->Project->getProjectDataById($id);
+        //        pr($project);
+        //        die;
         $this->set(compact('project'));
     }
 

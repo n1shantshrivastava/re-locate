@@ -40,7 +40,6 @@ $cakeDescription = __d('cake_dev', $appName);
         'developer',
         'masonry/jquery.masonry.min',
         'masonry/jquery.masonry.corner.stamp',
-        'circleview/CircleView',
         'tween/TimelineLite',
         'tween/EasePack',
         'tween/TimelineMax',
