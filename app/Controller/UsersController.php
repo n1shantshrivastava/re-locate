@@ -12,9 +12,9 @@ class UsersController extends AppController {
         $this->Auth->allow(array('index'));
     }
 
-    public function beforeRender(){
+    public function beforeRender() {
         parent::beforeRender();
-        if($this->loggedInUserId() != ''){
+        if ($this->loggedInUserId() != '') {
             $tab = 'users';
         } else {
             $tab = '';
@@ -28,7 +28,7 @@ class UsersController extends AppController {
      * @return void
      */
     public function index() {
-        if($this->loggedInUserId() != '' && $this->loggedInUserRole() == 1){
+        if ($this->loggedInUserId() != '' && $this->loggedInUserRole() == 1) {
             $this->redirect(array('action' => 'all_users'));
         } else {
             $this->redirect(array('action' => 'login'));
@@ -38,7 +38,7 @@ class UsersController extends AppController {
     public function login() {
         $loggedInUserData = $this->Auth->login();
 
-        if($this->loggedInUserId()==''){
+        if ($this->loggedInUserId() == '') {
             if ($this->Auth->login()) {
                 $this->redirect($this->Auth->redirect());
             }
@@ -58,16 +58,16 @@ class UsersController extends AppController {
         $this->redirect($this->Auth->logout());
     }
 
-    public function all_users(){
+    public function all_users() {
         $this->User->recursive = 0;
-        $users = $this->paginate('User',array('User.role_id != '=>1));
+        $users = $this->paginate('User', array('User.role_id != ' => 1));
         $this->set('users', $users);
     }
 
-    public function dashboard(){
+    public function dashboard() {
         $this->User->recursive = 0;
         $projects = $this->User->ProjectsUser->Project->getActiveProjects();
-        $this->set('users', $projects);
+        $this->set(compact('projects'));
     }
 
     /**
@@ -101,7 +101,7 @@ class UsersController extends AppController {
         }
         $roles = $this->User->Role->getList();
         $technologies = $this->User->Technology->getList();
-        $this->set(compact('technologies','roles'));
+        $this->set(compact('technologies', 'roles'));
     }
 
     /**
@@ -149,5 +149,60 @@ class UsersController extends AppController {
         }
         $this->Session->setFlash(__('User was not deleted'), 'set_flash');
         $this->redirect('/');
+    }
+
+    public function change_password() {
+        $role = $this->loggedInUserRole();
+        $loggedInUserId = $this->loggedInUserId();
+        if ($role == 1) {
+            if (!empty($this->request->data)) {
+
+                if ($this->User->checkUserCurrentPassword($loggedInUserId, $this->request->data['User']['password'])) {
+                    if ($this->request->data['User']['new_password'] == $this->request->data['User']['confirm_password']) {
+
+                        $this->request->data['User']['password'] = $this->request->data['User']['new_password'];
+
+                        if ($this->User->save($this->request->data)) {
+                            $this->Session->setFlash(__('Password has been updated'), 'set_flash');
+                        } else {
+                            $this->Session->setFlash(__('Password can not be updated, please try again'), 'set_flash');
+                        }
+                    }
+                    $this->redirect(array('action' => 'dashboard'));
+                } else {
+                    $this->Session->setFlash(__('Invalid old password. Please enter valid old password'), 'set_flash');
+                    $this->redirect($this->referer());
+                }
+            }
+        } else {
+            $this->Session->setFlash('You are not authorized user.','set_flash');
+            $this->redirect($this->Auth->logout());
+        }
+
+    }
+
+    public function check_availability() {
+        $this->layout = 'ajax';
+        $this->autoRender = false;
+
+        $username = null;
+        $password = null;
+
+        //checking for unique username
+        if (isset($this->request->data['username'])) {
+            $result = $this->User->checkUserByCount($this->request->data);
+            return $result;
+        } //checking for old password and new password matching at the time of changing password
+        elseif (isset($this->request->data['password'])) {
+            $old_user = $this->User->findById($this->loggedInUserId());
+            $old = $old_user['User']['password'];
+            if ($old == AuthComponent::password($this->request->data['password'])) {
+                return true;
+            } else {
+                return false;
+            }
+        }  else {
+            return false;
+        }
     }
 }

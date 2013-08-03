@@ -104,15 +104,23 @@ $(document).ready(function () {
             var projectId = $("#projectId").val();
             var draggableContent = ui.draggable;
             var user_id = draggableContent.children("div").attr("id");
+//            console.log(user_id);
             var thisobject = this;
             $.ajax({
                 type: "POST",
                 url:"/projects/add_project_resource",
                 data:{'project_id':projectId,'user_id':user_id},
                 success:function (result) {
-                    var resultDt = $.parseJson(result);
-                    console.log(resultDt);
-                    addCircle(ui.draggable, thisobject.id);
+                   var resultDt = jQuery.parseJSON(result);
+                    if(resultDt['status'] == 'success'){
+                        addCirclephp(ui.draggable, thisobject.id);
+                        $("#errorDivphp").html();
+                        $("#errorDivphp").html('<span class="success">'+resultDt['message']+'</span>');
+                    }else{
+                        $("#errorDivphp").html();
+                      $("#errorDivphp").html('<span class="error">'+resultDt['message']+'</span>');
+                    }
+
                 }
             });
 
@@ -123,7 +131,7 @@ $(document).ready(function () {
     $(".mainContainer-php").mouseover(function () {
         var containerId = this.id;
         TweenLite.to($("#b" + containerId), 0.2, {css:{width:150, height:150, marginLeft:-20, marginTop:-20}, ease:Power2.easeOut, onComplete:function () {
-            calculatePositions(containerId);
+            calculatePositionsphp(containerId);
         }
         });
     });
@@ -192,15 +200,16 @@ $(document).ready(function () {
 
 });
 
-function addCircle($item, containerId) {
+function addCirclephp($item, containerId) {
 
     var resultCircleClass = "r" + containerId;
+    console.log('addCircleCalled')
     var div = $("<div class='resultCircle resultCircle-php " + resultCircleClass + "' >" + $item.html() + "</div>");
     $('#b' + containerId).append(div);
-    calculatePositions(containerId);
+    calculatePositionsphp(containerId);
 }
 
-function calculatePositions(containerId) {
+function calculatePositionsphp(containerId) {
 
     var bigCircleId = "#b" + containerId;
     var resultCircleClass = ".r" + containerId;

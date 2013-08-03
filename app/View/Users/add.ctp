@@ -23,7 +23,10 @@ echo $this->Html->script(array('validations'), false);
                         <label class="control-label" for="userName">Email Id</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('username');?>
+                            <?php echo $this->Form->input('username');
+                            echo $this->Html->image('indicator.gif', array('id' => 'busy-indicator'));
+                            echo $this->Html->image('available.png', array('id' => 'available'));
+                            echo $this->Html->image('unavailable.gif', array('id' => 'unavailable'));?>
                         </div>
                     </div>
                     <div class="control-group info">

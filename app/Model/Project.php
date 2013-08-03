@@ -65,17 +65,21 @@ class Project extends AppModel {
         $this->recursive=2;
         $this->ProjectResourceRequirement->unbindModel(array('belongsTo'=>array('Project','Technology')));
         $this->ProjectTechnology->unbindModel(array('belongsTo'=>array('Project')));
+        $this->ProjectsUser->unbindModel(array('belongsTo'=>array('Project')));
         $projectData =  $this->read(null, $id);
         if(!empty($projectData)){
             $userIds = array();
             if(!empty($projectData['ProjectsUser'])){
-                foreach($projectData['ProjectsUser'] as $projectUser){
+                foreach($projectData['ProjectsUser'] as $projectUserKey =>  $projectUser){
                     $userIds[] = $projectUser['user_id'];
+
                 }
             }
             foreach($projectData['ProjectTechnology'] as $key => $projectTechnology){
                 if(!empty($userIds)){
                     $conditions = array('User.technology_id'=>$projectTechnology['technology_id'],array('NOT'=>array('User.id'=>$userIds)));
+                    $this->ProjectsUser->User->recursive = -1;
+                    $projectData['ProjectTechnology'][$key]['ProjectsUser'] = $this->ProjectsUser->User->find('all',array('conditions'=>array('User.technology_id'=>$projectTechnology['technology_id'],'User.id'=>$userIds)));
                 }else{
                     $conditions = array('User.technology_id'=>$projectTechnology['technology_id']);
                 }
@@ -88,8 +92,11 @@ class Project extends AppModel {
     }
 
     public function saveProjectUser($data){
-        $getExistUser = $this->ProjectsUser->find('first',array('ProjectsUser.project_id'=>$data['project_id'],'ProjectsUser.user_id'=>$data['user_id']));
-        if(!empty($getExistUser)){
+
+        $this->ProjectsUser->recursive = -1;
+        $getExistUser = $this->ProjectsUser->find('first',array('conditions'=>array('ProjectsUser.project_id'=>$data['project_id'],'ProjectsUser.user_id'=>$data['user_id'])));
+        $this->log($getExistUser);
+        if(empty($getExistUser)){
             $this->ProjectsUser->create();
             return $this->ProjectsUser->save($data);
         }else{
@@ -101,7 +108,7 @@ class Project extends AppModel {
         $this->recursive = 2;
         $projects =  $this->find('all',array(
             'conditions' => array(
-                'Project.start_date >= '=>date("Y-m-d H:i:s"),
+                'Project.start_date <= '=>date("Y-m-d H:i:s"),
                 'Project.end_date >= '=>date("Y-m-d H:i:s")
             )
         ));

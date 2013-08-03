@@ -67,8 +67,8 @@ class ProjectsController extends AppController {
         //        $this->Project->recursive=2;
         //        $project = $this->Project->read(null, $id);
         $project = $this->Project->getProjectDataById($id);
-        //        pr($project);
-        //        die;
+//                pr($project);
+//                die;
         $this->set(compact('project'));
     }
 
@@ -175,7 +175,6 @@ class ProjectsController extends AppController {
             $technologies = $this->Project->getTechnologyData();
             if (!empty($technologies)) {
                 return json_encode($technologies);
-
             } else {
                 return json_encode(array());
             }
