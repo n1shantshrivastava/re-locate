@@ -67,7 +67,7 @@ class UsersController extends AppController {
     public function dashboard() {
         $this->User->recursive = 0;
         $projects = $this->User->ProjectsUser->Project->getActiveProjects();
-        $this->set('users', $projects);
+        $this->set(compact('projects'));
     }
 
     /**
