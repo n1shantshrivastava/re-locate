@@ -61,9 +61,9 @@ class ProjectsController extends AppController {
 				$this->Session->setFlash(__('The project could not be saved. Please, try again.'));
 			}
 		}
-        $technologyData = $this->Project->getTechnologyData();
-//        pr($technologyData);
-        $this->set(compact('technologyData'));
+        $technologies = $this->Project->getTechnologyData();
+        pr($technologies);
+        $this->set(compact('technologies'));
 	}
 
 /**

@@ -45,4 +45,10 @@ class Technology extends AppModel {
 	);
 
 
+    public function getList(){
+        return $this->find('list',array(
+            'fields'=>array('id','stream_name')
+        ));
+    }
+
 }

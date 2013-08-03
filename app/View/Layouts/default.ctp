@@ -29,12 +29,24 @@ $cakeDescription = __d('cake_dev', $appName);
     <script src="http://code.jquery.com/jquery-1.7.1.js"></script>
     <?php
     echo $this->Html->meta('icon');
-
-    echo $this->Html->css(array("flatly.bootstrap",'CircleView'));
+    echo $this->Html->css(array(
+        "flatly.bootstrap" , 'developer' , 'jquery-ui-1.8.22.custom','CircleView'));
 
     echo $this->fetch('meta');
     echo $this->fetch('css');
-    echo $this->Html->script(array('bootstrap', 'jquery.validate', 'jquery.validation.functions','masonry/jquery.masonry.min','masonry/jquery.masonry.corner.stamp','circleview/CircleView','tween/TimelineLite','tween/EasePack','tween/TimelineMax','tween/TweenMax.js','circleview/jquery.qtip-1.0.0-rc3'));
+    echo $this->Html->script(array(
+        'bootstrap', 'jquery.validate', 'jquery.validation.functions' ,
+        'jquery.ui.core' , 'jquery.ui.datepicker',
+        'developer',
+        'masonry/jquery.masonry.min',
+        'masonry/jquery.masonry.corner.stamp',
+        'circleview/CircleView',
+        'tween/TimelineLite',
+        'tween/EasePack',
+        'tween/TimelineMax',
+        'tween/TweenMax.js',
+        'circleview/jquery.qtip-1.0.0-rc3'
+    ));
     echo $this->fetch('script');
     ?>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>

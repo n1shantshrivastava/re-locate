@@ -51,4 +51,5 @@ class User extends AppModel {
             'counterQuery' => ''
         )
     );
+
 }
