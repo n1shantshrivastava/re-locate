@@ -4,7 +4,7 @@
     <section id="forms">
         <input type="hidden" name="project_id" id="projectId" value="<?php echo h($project['Project']['id']); ?>"/>
         <div class="row">
-            <div class="span10 offset1">
+            <div class="span11">
                 <div class="form-horizontal well control-group">
                     <legend><?php echo h($project['Project']['project_name']); ?></legend>
                     <?php
@@ -26,7 +26,7 @@
                             </script>
                             <script
                                 src="<?php echo $base_url; ?>/js/circleview/<?php echo $technology['Technology']['slug'] . '.js'?>"></script>
-                            <div class="">
+                            <div class="mainContentWrapper">
                                 <div id="errorDiv<?php echo $technology['Technology']['slug']; ?>"></div>
                                 <div
                                     class="mainCircleContainer mainContainer-<?php echo $technology['Technology']['slug'] ?>"
@@ -53,7 +53,10 @@
                                                     }
                                                 ?>
                                                 <script type="text/javascript" >
-                                                    calculatePositions<?php echo str_replace('-','',$technology['Technology']['slug'])?>(<?php echo $technology['Technology']['id']; ?>)
+                                                    TweenLite.to($("#b"<?php echo $technology['Technology']['id']; ?>), 0.2, {css:{width:150, height:150, marginLeft:-20, marginTop:-20}, ease:Power2.easeOut, onComplete:function () {
+                                                        calculatePositionsphp(<?php echo $technology['Technology']['id']; ?>);
+                                                    }
+                                                    });
                                                 </script>
 
                                             <?php
@@ -61,8 +64,7 @@
                                         ?>
                                     </div>
                                 </div>
-                                <div class="clearfix"></div>
-                                <div>
+                                <div class="content-box">
                                     <div id="objectBox"
                                          class="objectBox-<?php echo $technology['Technology']['slug'] ?>">
                                         <div class="corner-stamp" id="add_box"></div>
@@ -75,6 +77,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="clearfix"></div>
                             </div>
                             <div class="clearfix"></div>
                             <?php

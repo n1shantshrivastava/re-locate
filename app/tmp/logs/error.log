@@ -4123,3 +4123,175 @@
 
 )
 
+2013-08-03 21:24:48 Error: 
+2013-08-03 21:24:53 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 14
+            [project_id] => 1
+            [user_id] => 29
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2013-08-03 21:24:48
+            [modified] => 2013-08-03 21:24:48
+        )
+
+)
+
+2013-08-03 21:52:53 Error: 
+2013-08-03 21:52:55 Error: 
+2013-08-03 21:52:57 Error: 
+2013-08-03 21:53:01 Error: 
+2013-08-03 21:53:04 Error: 
+2013-08-03 21:53:06 Error: 
+2013-08-03 21:53:08 Error: 
+2013-08-03 21:53:11 Error: 
+2013-08-03 21:53:13 Error: 
+2013-08-03 21:53:16 Error: 
+2013-08-03 21:53:18 Error: 
+2013-08-03 21:53:21 Error: 
+2013-08-03 22:12:49 Error: 
+2013-08-03 22:37:19 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 5
+            [project_id] => 1
+            [user_id] => 9
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2013-08-03 21:53:04
+            [modified] => 2013-08-03 21:53:04
+        )
+
+)
+
+2013-08-03 22:39:49 Error: 
+2013-08-03 22:39:53 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 14
+            [project_id] => 1
+            [user_id] => 25
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2013-08-03 22:39:49
+            [modified] => 2013-08-03 22:39:49
+        )
+
+)
+
+2013-08-03 22:39:58 Error: 
+2013-08-03 22:40:02 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 15
+            [project_id] => 1
+            [user_id] => 82
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2013-08-03 22:39:58
+            [modified] => 2013-08-03 22:39:58
+        )
+
+)
+
+2013-08-03 22:42:06 Error: 
+2013-08-03 22:42:11 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 16
+            [project_id] => 1
+            [user_id] => 66
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2013-08-03 22:42:06
+            [modified] => 2013-08-03 22:42:06
+        )
+
+)
+
+2013-08-03 22:42:53 Error: 
+2013-08-03 22:42:58 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 17
+            [project_id] => 1
+            [user_id] => 52
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2013-08-03 22:42:53
+            [modified] => 2013-08-03 22:42:53
+        )
+
+)
+
+2013-08-03 22:44:00 Error: 
+2013-08-03 22:44:02 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 18
+            [project_id] => 1
+            [user_id] => 51
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2013-08-03 22:44:00
+            [modified] => 2013-08-03 22:44:00
+        )
+
+)
+
+2013-08-03 22:44:32 Error: 
+2013-08-03 22:44:34 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 19
+            [project_id] => 1
+            [user_id] => 45
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2013-08-03 22:44:32
+            [modified] => 2013-08-03 22:44:32
+        )
+
+)
+

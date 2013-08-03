@@ -73,6 +73,30 @@ $cakeDescription = __d('cake_dev', $appName);
                 $('#NotifyMessage').hide();
             }
         });
+        function calculatePositions(containerId) {
+
+            var bigCircleId = "#b" + containerId;
+            var resultCircleClass = ".r" + containerId;
+            var radius = 75 - 15 - 1; //outer circle radius - result circle radius - offset
+            var num = $(bigCircleId).children().length;
+            var dividers = 360 / num;
+            var center = 60; // radius of middle circle + 5(offset)
+            var theta = 0.0;
+            var radians = dividers * (Math.PI / 180);
+
+            for (var i = 0; i < num; i++) {
+
+                var x = Math.round(center + radius * Math.cos(theta));
+                var y = Math.round(center + radius * Math.sin(theta));
+                var M = $(".project-resource").children();
+
+                $(bigCircleId + " :nth-child(" + (i + 1) + ")").not(".project-resource, .slider, .ui-slider-range-min, .ui-slider-handle").css({'left':x, 'top':y});
+
+                theta += radians;
+            }
+            TweenLite.to($(resultCircleClass), 0.1, {css:{autoAlpha:1, scaleX:1, scaleY:1}});
+
+        }
             </script>
 </head>
 <body>
