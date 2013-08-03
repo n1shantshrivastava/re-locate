@@ -27,14 +27,14 @@ switch($tab){
                     echo $this->Html->tag(
                         'li',
                         $this->Html->link(__('Users'),
-                            array('controller'=>'users','action'=>'dashboard'),
+                            array('controller'=>'users','action'=>'all_users'),
                             array('escape' => false)
                         ), array('escape' => false, 'class' => $users)
                     );
                     echo $this->Html->tag(
                         'li',
                         $this->Html->link(__('Projects'),
-                            array('controller'=>'projects','action'=>'index'),
+                            array('controller'=>'projects','action'=>'all_projects'),
                             array('escape' => false)
                         ), array('escape' => false, 'class' => $projects)
                     );

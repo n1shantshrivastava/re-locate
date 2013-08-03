@@ -35,6 +35,19 @@ class ProjectsController extends AppController {
  * @return void
  */
 	public function index() {
+        if($this->loggedInUserId() != '' && $this->loggedInUserRole() == 1){
+            $this->redirect(array('action' => 'all_projects'));
+        } else {
+            $this->redirect(array('action' => 'login'));
+        }
+	}
+
+/**
+ * index method
+ *
+ * @return void
+ */
+	public function all_projects() {
 		$this->Project->recursive = 0;
 		$this->set('projects', $this->paginate());
 	}
@@ -62,7 +75,11 @@ class ProjectsController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
-			$this->Project->create();
+
+            $this->request->data['Project']['start_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['start_date']));
+            $this->request->data['Project']['end_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['end_date']));
+
+            $this->Project->create();
 			if ($this->Project->save($this->request->data)) {
 				$this->Session->setFlash(__('The project has been saved'));
 				$this->redirect(array('action' => 'index'));
@@ -71,7 +88,6 @@ class ProjectsController extends AppController {
 			}
 		}
         $technologies = $this->Project->getTechnologyData();
-        pr($technologies);
         $this->set(compact('technologies'));
 	}
 
@@ -87,7 +103,11 @@ class ProjectsController extends AppController {
 			throw new NotFoundException(__('Invalid project'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->Project->save($this->request->data)) {
+
+            $this->request->data['Project']['start_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['start_date']));
+            $this->request->data['Project']['end_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['end_date']));
+
+            if ($this->Project->save($this->request->data)) {
 				$this->Session->setFlash(__('The project has been saved'));
 				$this->redirect(array('action' => 'index'));
 			} else {
@@ -95,6 +115,8 @@ class ProjectsController extends AppController {
 			}
 		} else {
 			$this->request->data = $this->Project->read(null, $id);
+            $technologies = $this->Project->getTechnologyData();
+            $this->set(compact('technologies'));
 		}
 	}
 

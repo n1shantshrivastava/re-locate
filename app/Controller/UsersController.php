@@ -57,10 +57,16 @@ class UsersController extends AppController {
         $this->redirect($this->Auth->logout());
     }
 
-    public function dashboard(){
+    public function all_users(){
         $this->User->recursive = 0;
         $users = $this->paginate('User',array('User.role_id != '=>1));
         $this->set('users', $users);
+    }
+
+    public function dashboard(){
+        $this->User->recursive = 0;
+        $projects = $this->User->ProjectsUser->Project->getActiveProjects();
+        $this->set('users', $projects);
     }
 
     /**
@@ -87,7 +93,7 @@ class UsersController extends AppController {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('The user has been saved'));
-                $this->redirect(array('action' => 'dashboard'));
+                $this->redirect('/');
             } else {
                 $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
             }
@@ -111,7 +117,7 @@ class UsersController extends AppController {
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('The user has been saved'));
-                $this->redirect(array('action' => 'dashboard'));
+                $this->redirect('/');
             } else {
                 $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
             }
@@ -138,9 +144,9 @@ class UsersController extends AppController {
         }
         if ($this->User->delete()) {
             $this->Session->setFlash(__('User deleted'));
-            $this->redirect(array('action' => 'dashboard'));
+            $this->redirect('/');
         }
         $this->Session->setFlash(__('User was not deleted'));
-        $this->redirect(array('action' => 'dashboard'));
+        $this->redirect('/');
     }
 }

@@ -5,6 +5,7 @@ App::uses('AppModel', 'Model');
  *
  * @property Technology $Technology
  * @property Role $Role
+ * @property ProjectsUser $ProjectsUser
  */
 class User extends AppModel {
 /**

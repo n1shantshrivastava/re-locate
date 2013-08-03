@@ -1,3 +1,7 @@
+<?php
+echo $this->Html->script(array('validations'), false);
+?>
+
 <div class="projects form">
     <section id="forms">
         <div class="page-header">
@@ -6,13 +10,17 @@
 
         <div class="row">
             <div class="span10 offset1">
-                <?php echo $this->Form->create('Project', array('class' => "form-horizontal well")); ?>
+                <?php
+                echo $this->Form->create('Project', array(
+                    'class' => "form-horizontal well",
+                    'inputDefaults' => array('label' => false, 'div' => false)
+                )); ?>
                 <div class="form-actions">
                     <div class="control-group info">
                         <label class="control-label" for="projectName">Project Name</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('project_name', array('div' => false, 'label' => false)); ?>
+                            <?php echo $this->Form->input('project_name'); ?>
                         </div>
                     </div>
 
@@ -20,7 +28,7 @@
                         <label class="control-label" for="accountName">Account Name</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('account_name', array('div' => false, 'label' => false)); ?>
+                            <?php echo $this->Form->input('account_name'); ?>
                         </div>
                     </div>
 
@@ -28,7 +36,7 @@
                         <label class="control-label" for="projectType">Project Type</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('project_type', array('div' => false, 'label' => false)); ?>
+                            <?php echo $this->Form->input('project_type'); ?>
                         </div>
                     </div>
 
@@ -36,22 +44,21 @@
                         <label class="control-label" for="description">Description</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('description', array('div' => false, 'label' => false)); ?>
+                            <?php echo $this->Form->input('description'); ?>
                         </div>
                     </div>
 
                     <div class="control-group info">
-                        <label class="control-label" for="start">Start</label>
+                        <label class="control-label" for="start">Start Date</label>
 
                         <div class="controls">
                             <?php
                             echo $this->Form->input(
-                                'start', array(
+                                'start_date', array(
                                 'class' => 'tip span3 date-picker',
                                 'placeholder' => 'Enter Start Date',
                                 'id' => 'start',
                                 'type' => 'text',
-                                'label' => false,
                                 'value' => date('d-m-Y')
                             ));
                             ?>
@@ -59,17 +66,16 @@
                     </div>
 
                     <div class="control-group info">
-                        <label class="control-label" for="end">End</label>
+                        <label class="control-label" for="end">End Date</label>
 
                         <div class="controls">
                             <?php
                             echo $this->Form->input(
-                                'end', array(
+                                'end_date', array(
                                 'class' => 'tip span3 date-picker',
                                 'placeholder' => 'Enter End Date',
                                 'id' => 'end',
                                 'type' => 'text',
-                                'label' => false,
                                 'value' => date('d-m-Y')
                             ));
                             ?>
@@ -84,15 +90,21 @@
                     </div>
 
                     <div class="control-group info">
+                        <label class="control-label" for="technology">Technology</label>
                         <div class="controls">
                             <?php
-                            echo $this->Form->input('technology_1', array('options' => $technologies, 'div' => false, 'label' => false));
+                            echo $this->Form->input('technology_1', array('options' => $technologies));
 //                            $percentages = $this->Relocate->allocationPercentage();
                             $percentages = array(5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90,
                                 95, 100
-                            );
-                            echo $this->Form->input('percentage_1', array('options' => $percentages, 'div' => false, 'label' => false));
-
+                            );?>
+                        </div>
+                        </div>
+                    <div class="control-group info">
+                        <label class="control-label" for="percentage_1">Percentages</label>
+                        <div class="controls">
+                            <?php
+                            echo $this->Form->input('percentage_1', array('options' => $percentages));
                             ?>
                         </div>
                     </div>
@@ -110,4 +122,3 @@
         </div>
     </section>
 </div>
-
