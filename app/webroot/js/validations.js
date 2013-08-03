@@ -7,6 +7,8 @@
  */
 
 jQuery(function () {
+
+//    User form validations start
     jQuery("#UserUsername").validate({
         expression:"if (VAL) return true; else return false;",
         message:"Please enter the email id"
@@ -79,4 +81,42 @@ jQuery(function () {
         expression:"if (VAL) return true; else return false;",
         message:"Please select the role"
     });
+//    User form validations end
+
+
+//    Project form validations start
+    jQuery("#ProjectProjectName").validate({
+        expression:"if (VAL) return true; else return false;",
+        message:"Please enter the project name"
+    });
+    jQuery("#ProjectAccountName").validate({
+        expression:"if (VAL) return true; else return false;",
+        message:"Please enter the account name"
+    });
+    jQuery("#ProjectProjectType").validate({
+        expression:"if (VAL) return true; else return false;",
+        message:"Please enter the project type"
+    });
+    jQuery("#ProjectDescription").validate({
+        expression:"if (VAL) return true; else return false;",
+        message:"Please enter the project description"
+    });
+    jQuery("#start").validate({
+        expression:"if (VAL) return true; else return false;",
+        message:"Please enter the start date"
+    });
+    jQuery("#end").validate({
+        expression:"if (VAL) return true; else return false;",
+        message:"Please enter the end date"
+    });
+    jQuery("#ProjectTechnology1").validate({
+        expression:"if (VAL) return true; else return false;",
+        message:"Please select the technology"
+    });
+    jQuery("#ProjectPercentage1").validate({
+        expression:"if (VAL) return true; else return false;",
+        message:"Please select the percentages"
+    });
+//    Project form validations end
+
 });

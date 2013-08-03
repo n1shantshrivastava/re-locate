@@ -1,9 +1,19 @@
 .logo {
-    height: 15px;
-    width: 300px;
+    /*height: 15px;*/
+    width: 110px;
     display: block;
     text-indent: -5000px;
-    background: url("../img/relocate-300.png");
-    /*margin: 10px 0 10px 20px;*/
+    background: url("../img/relocate-x150.png") no-repeat;
+    margin: 10px;
+    /*float: left;*/
+}
+
+.logo:hover {
+    /*height: 15px;*/
+    width: 110px;
+    display: block;
+    text-indent: -5000px;
+    background: url("../img/relocate-x150-hover.png") no-repeat;
+    margin: 10px;
     /*float: left;*/
 }

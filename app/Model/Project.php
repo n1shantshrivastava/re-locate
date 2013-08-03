@@ -87,4 +87,14 @@ class Project extends AppModel {
         return $projectData;
     }
 
+    public function getActiveProjects(){
+        $this->recursive = 2;
+        $projects =  $this->find('all',array(
+            'conditions' => array(
+                'Project.start_date >= '=>date("Y-m-d H:i:s"),
+                'Project.end_date >= '=>date("Y-m-d H:i:s")
+            )
+        ));
+        return $projects;
+    }
 }
