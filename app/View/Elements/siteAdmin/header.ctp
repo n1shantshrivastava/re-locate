@@ -1,15 +1,56 @@
-<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> </a>
-<a class="brand" href="/users/dashboard"><?php echo $appName; ?></a>
-<div class="nav-collapse">
-    <ul class="nav">
-        <?php
-        echo $this->Html->tag('li', $this->Html->link(__('Home'), array('controller'=>'users','action'=>'dashboard'), array('escape' => false)), array('escape' => false, 'class' => 'active'));
-        ?>
-    </ul>
-    <ul class="nav pull-right" id="main-menu-right">
-        <?php
-        $action = ($loggedInUserId!='' && $loggedInUserRole==1) ? 'logout' : 'login';
-        echo $this->Html->tag('li', $this->Html->link(__($action), array('controller' => 'users', 'action' => $action), array('escape' => false)), array('escape' => false, 'class' => ''));
-        ?>
-    </ul>
+<?php
+if (!isset($tab) || $tab == '') {
+    $tab = 'users';
+}
+
+$users = $projects = '';
+
+switch($tab){
+    case 'users':
+        $users = 'active';
+        break;
+    case 'projects':
+        $projects = 'active';
+        break;
+}
+?>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a href="/" class="logo brand"></a>
+            <div id="main-menu" class="nav-collapse collapse">
+
+<?php if(!empty($loggedInUserId)){ ?>
+                <ul id="main-menu-left" class="nav">
+                    <?php
+                    echo $this->Html->tag(
+                        'li',
+                        $this->Html->link(__('Users'),
+                            array('controller'=>'users','action'=>'dashboard'),
+                            array('escape' => false)
+                        ), array('escape' => false, 'class' => $users)
+                    );
+                    echo $this->Html->tag(
+                        'li',
+                        $this->Html->link(__('Projects'),
+                            array('controller'=>'projects','action'=>'index'),
+                            array('escape' => false)
+                        ), array('escape' => false, 'class' => $projects)
+                    );
+                    ?>
+                </ul>
+                    <?php } ?>
+                <ul id="main-menu-right" class="nav pull-right">
+                    <li>
+                        <?php if(!empty($loggedInUserId)){ ?>
+                        <a href="/users/logout">Logout</a>
+                        <?php } else { ?>
+                        <a href="/users/login">Login</a>
+                        <?php } ?>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>

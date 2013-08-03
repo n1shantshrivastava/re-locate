@@ -41,7 +41,7 @@ $(document).ready(function () {
             requirements_html += '<option value="' + project_requirements + '">' + project_requirements + '</option>';
         }
         requirements_html += '</select></span>';
-        
+
         requirements_html += '</div>';
         console.log(project_requirements);
     });
