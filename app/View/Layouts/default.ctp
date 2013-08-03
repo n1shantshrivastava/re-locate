@@ -26,16 +26,19 @@ $cakeDescription = __d('cake_dev', $appName);
         <?php echo $cakeDescription ?>:
         <?php echo $title_for_layout; ?>
     </title>
+    <script src="http://code.jquery.com/jquery-1.7.1.js"></script>
     <?php
     echo $this->Html->meta('icon');
 
-    echo $this->Html->css(array("flatly.bootstrap"));
+    echo $this->Html->css(array("flatly.bootstrap",'CircleView'));
 
     echo $this->fetch('meta');
     echo $this->fetch('css');
-    echo $this->Html->script(array('jquery-1.7.2.min', 'bootstrap', 'jquery.validate', 'jquery.validation.functions'));
+    echo $this->Html->script(array('bootstrap', 'jquery.validate', 'jquery.validation.functions','masonry/jquery.masonry.min','masonry/jquery.masonry.corner.stamp','circleview/CircleView','tween/TimelineLite','tween/EasePack','tween/TimelineMax','tween/TweenMax.js','circleview/jquery.qtip-1.0.0-rc3'));
     echo $this->fetch('script');
     ?>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <style type="text/css">
         body {
             padding-top: 60px;

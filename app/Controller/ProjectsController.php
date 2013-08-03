@@ -41,7 +41,9 @@ class ProjectsController extends AppController {
 		if (!$this->Project->exists()) {
 			throw new NotFoundException(__('Invalid project'));
 		}
-		$this->set('project', $this->Project->read(null, $id));
+        $this->Project->recursive=2;
+        $project = $this->Project->read(null, $id);
+		$this->set(compact('project'));
 	}
 
 /**

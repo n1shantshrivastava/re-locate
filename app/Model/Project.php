@@ -42,8 +42,8 @@ class Project extends AppModel {
 			'finderQuery' => '',
 			'counterQuery' => ''
 		),
-        'ProjectUser' => array(
-            'className' => 'ProjectUser',
+        'ProjectsUser' => array(
+            'className' => 'ProjectsUser',
             'foreignKey' => 'project_id',
             'dependent' => true,
             'conditions' => '',
@@ -59,6 +59,11 @@ class Project extends AppModel {
 
     public function getTechnologyData(){
         return $this->ProjectTechnology->Technology->find('list',array('fields'=>array('id','stream_name')));
+    }
+
+    public function getProjectDataById($id){
+        $this->Project->recursive=2;
+        return $this->Project->read(null, $id);
     }
 
 }

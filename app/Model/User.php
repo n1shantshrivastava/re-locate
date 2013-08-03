@@ -37,8 +37,8 @@ class User extends AppModel {
 		)
 	);
     public $hasMany = array(
-        'ProjectUser' => array(
-            'className' => 'ProjectUser',
+        'ProjectsUser' => array(
+            'className' => 'ProjectsUser',
             'foreignKey' => 'user_id',
             'dependent' => true,
             'conditions' => '',
