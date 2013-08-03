@@ -7,7 +7,7 @@
         <div class="row">
             <div class="span10 offset1">
                 <div class="form-horizontal well">
-                    <legend><?php echo h($user['User']['first_name'].' '.$user['User']['last_name']); ?></legend>
+                    <legend><?php echo h($user['User']['first_name'] . ' ' . $user['User']['last_name']); ?></legend>
                     <table class="table table-striped table-hover">
                         <tr>
                             <td width="40%"><?php echo __('Employee Id'); ?></td>
@@ -61,19 +61,27 @@
                         <tr>
                             <td><?php echo __('Role'); ?></td>
                             <td>
-                                <?php echo h($user['Role']['role']); ?>
+                                <?php
+                                if (isset($user['Role']['role']) && !empty($user['Role']['role'])) {
+                                    echo h($user['Role']['role']);
+                                } else {
+                                    echo "No roles assigned yet";
+                                }
+                                ?>
                                 &nbsp;
                             </td>
                         </tr>
                     </table>
-                        <?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $user['User']['id']), array('class' => 'btn btn-primary'));
-                        echo $this->Html->link(
-                            'Delete', array('action' => 'delete', $user['User']['id']), array(
-                                'class' => 'btn btn-primary',
-                            ),
-                            __('You are about to delete %s', '"' . $user['User']['first_name'] . ' ' . $user['User']['last_name'] . '", Are you sure?')
-                        );
-                        echo $this->Html->link(__('Back'), array('action' => 'index'), array('class' => 'btn')); ?>
+                    <div class="form-buttons clearfix">
+                    <?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $user['User']['id']), array('class' => 'btn btn-primary '));
+                    echo $this->Html->link(
+                        'Delete', array('action' => 'delete', $user['User']['id']), array(
+                            'class' => 'btn btn-primary ',
+                        ),
+                        __('You are about to delete %s', '"' . $user['User']['first_name'] . ' ' . $user['User']['last_name'] . '", Are you sure?')
+                    );
+                    echo $this->Html->link(__('Back'), array('action' => 'index'), array('class' => 'btn ')); ?>
+                    </div>
                 </div>
             </div>
         </div>
