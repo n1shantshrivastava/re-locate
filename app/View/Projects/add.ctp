@@ -82,7 +82,7 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
                     </div>
                 </div>
 
-                <!--Project Reequirements : start-->
+                <!--Project Requirements : start-->
                 <div class="form-actions">
                     <div class="page-header">
                         <h3>Project Requirements</h3>
@@ -120,7 +120,7 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
                         </span>
                             <span class="pull-left">
                             <?php
-                                echo $this->Form->input('ProjectResourceRequirements.1.number_of_resources', array(
+                                echo $this->Form->input('ProjectResourceRequirements.1.no_of_resources', array(
                                     'options' => array(
                                         1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7,
                                         8 => 8, 9 => 9, 10 => 10

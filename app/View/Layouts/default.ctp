@@ -30,13 +30,13 @@ $cakeDescription = __d('cake_dev', $appName);
     <?php
     echo $this->Html->meta('icon');
     echo $this->Html->css(array(
-        "flatly.bootstrap" , 'developer' , 'jquery-ui-1.8.22.custom','CircleView'));
+        "flatly.bootstrap", 'developer', 'jquery-ui-1.8.22.custom', 'CircleView'));
 
     echo $this->fetch('meta');
     echo $this->fetch('css');
     echo $this->Html->script(array(
-        'bootstrap', 'jquery.validate', 'jquery.validation.functions' ,
-        'jquery.ui.core' , 'jquery.ui.datepicker',
+        'bootstrap', 'jquery.validate', 'jquery.validation.functions',
+        'jquery.ui.core', 'jquery.ui.datepicker',
         'developer',
         'masonry/jquery.masonry.min',
         'masonry/jquery.masonry.corner.stamp',
@@ -49,7 +49,7 @@ $cakeDescription = __d('cake_dev', $appName);
     echo $this->fetch('script');
     ?>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
     <style type="text/css">
         body {
             padding-top: 60px;
@@ -73,7 +73,7 @@ $cakeDescription = __d('cake_dev', $appName);
                 $('#NotifyMessage').hide();
             }
         });
-            </script>
+    </script>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -91,7 +91,10 @@ $cakeDescription = __d('cake_dev', $appName);
     ?>
     <hr>
     <?php echo $this->element('siteAdmin/footer'); ?>
+    <div class="clearfix">
+        <?php echo $this->element('sql_dump'); ?>
+    </div>
 </div>
-<?php echo $this->element('sql_dump'); ?>
+
 </body>
 </html>
