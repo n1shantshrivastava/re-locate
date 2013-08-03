@@ -88,15 +88,15 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
                         <h3>Project Requirements</h3>
                     </div>
 
-                    <div class="control-group info project-requirements">
+                    <div class="control-group info project-requirements" id="project-requirements" >
                         <div class="add-more">
                             <button type="button" class="btn btn-primary btn-small" id="addMore">Add More</button>
                         </div>
 
-                        <div class="requirements">
+                        <div class="requirements" id="requirements">
                             <span class="pull-left">
                             <?php
-                                echo $this->Form->input('ProjectTechnologies.1.technology_id', array(
+                                echo $this->Form->input('ProjectResourceTechnologies.1.technology_id', array(
                                     'options' => $technologies,
                                     'div' => false,
                                     'label' => false,
@@ -111,7 +111,7 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
                                     45 => 45, 50 => 50, 55 => 55, 60 => 60, 65 => 65, 70 => 70, 75 => 75, 80 => 80,
                                     85 => 85, 90 => 90, 95 => 95, 100 => 100
                                 );
-                                echo $this->Form->input('ProjectTechnologies.1.required_percentage', array(
+                                echo $this->Form->input('ProjectResourceTechnologies.1.required_percentage', array(
                                     'options' => $percentages,
                                     'div' => false,
                                     'label' => false,
@@ -120,7 +120,7 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
                         </span>
                             <span class="pull-left">
                             <?php
-                                echo $this->Form->input('ProjectTechnologies.1.number_of_resources', array(
+                                echo $this->Form->input('ProjectResourceTechnologies.1.number_of_resources', array(
                                     'options' => array(
                                         1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7,
                                         8 => 8, 9 => 9, 10 => 10
