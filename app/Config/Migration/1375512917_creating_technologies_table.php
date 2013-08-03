@@ -60,8 +60,8 @@ class CreatingTechnologiesTable extends CakeMigration {
     public function after($direction) {
         if ($direction == 'up') {
 
-            $userModel = $this->generateModel('Technology');
-            $userData = array(
+            $technologyModel = $this->generateModel('Technology');
+            $technologyData = array(
                 array('stream_name' => 'PHP', 'slug'=>'php', 'created' => 'NOW()','modified' => 'NOW()'),
                 array('stream_name' => 'Ruby On Rails', 'slug'=>'ruby-on-rails', 'created' => 'NOW()','modified' => 'NOW()'),
                 array('stream_name' => 'Java', 'slug'=>'java', 'created' => 'NOW()','modified' => 'NOW()'),
@@ -74,7 +74,7 @@ class CreatingTechnologiesTable extends CakeMigration {
                 array('stream_name' => 'Quality Analyst', 'slug'=>'quality-analyst', 'created' => 'NOW()','modified' => 'NOW()')
             );
 
-            $userModel->saveAll($userData);
+            $technologyModel->saveAll($technologyData);
 
         }
         return true;
