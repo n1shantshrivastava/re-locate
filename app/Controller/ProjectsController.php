@@ -125,7 +125,13 @@ class ProjectsController extends AppController {
             $this->request->data['Project']['start_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['start_date']));
             $this->request->data['Project']['end_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['end_date']));
 
-            if ($this->Project->save($this->request->data)) {
+            $projectResourceRequirement = $this->request->data['ProjectResourceRequirements'];
+            if ($this->Project->saveAll($this->request->data)) {
+                if ($this->Project->ProjectResourceRequirement->saveAll($projectResourceRequirement)) {
+                    $this->log('>>>> SUCCESS | ProjectResourceRequirement data saved');
+                } else {
+                    $this->log('>>>> FAILED | ProjectResourceRequirement data could not be saved');
+                }
                 $this->Session->setFlash(__('The project has been saved'), 'set_flash');
                 $this->redirect(array('action' => 'index'));
             } else {
