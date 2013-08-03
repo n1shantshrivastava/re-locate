@@ -1,4 +1,6 @@
-<?php echo $this->Html->script(array('projects/project-add')); ?>
+<?php
+echo $this->Html->script(array('validations','projects/project-add'), false);
+?>
 <div class="projects form">
     <section id="forms">
         <div class="page-header">
@@ -7,13 +9,17 @@
 
         <div class="row">
             <div class="span10 offset1">
-                <?php echo $this->Form->create('Project', array('class' => "form-horizontal well")); ?>
+                <?php
+                echo $this->Form->create('Project', array(
+                    'class' => "form-horizontal well",
+                    'inputDefaults' => array('label' => false, 'div' => false)
+                )); ?>
                 <div class="form-actions">
                     <div class="control-group info">
                         <label class="control-label" for="projectName">Project Name</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('project_name', array('div' => false, 'label' => false)); ?>
+                            <?php echo $this->Form->input('project_name'); ?>
                         </div>
                     </div>
 
@@ -21,7 +27,7 @@
                         <label class="control-label" for="accountName">Account Name</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('account_name', array('div' => false, 'label' => false)); ?>
+                            <?php echo $this->Form->input('account_name'); ?>
                         </div>
                     </div>
 
@@ -29,7 +35,7 @@
                         <label class="control-label" for="projectType">Project Type</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('project_type', array('div' => false, 'label' => false)); ?>
+                            <?php echo $this->Form->input('project_type'); ?>
                         </div>
                     </div>
 
@@ -37,22 +43,21 @@
                         <label class="control-label" for="description">Description</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('description', array('div' => false, 'label' => false)); ?>
+                            <?php echo $this->Form->input('description'); ?>
                         </div>
                     </div>
 
                     <div class="control-group info">
-                        <label class="control-label" for="start">Start</label>
+                        <label class="control-label" for="start">Start Date</label>
 
                         <div class="controls">
                             <?php
                             echo $this->Form->input(
-                                'start', array(
+                                'start_date', array(
                                 'class' => 'tip span3 date-picker',
                                 'placeholder' => 'Enter Start Date',
                                 'id' => 'start',
                                 'type' => 'text',
-                                'label' => false,
                                 'value' => date('d-m-Y')
                             ));
                             ?>
@@ -60,17 +65,16 @@
                     </div>
 
                     <div class="control-group info">
-                        <label class="control-label" for="end">End</label>
+                        <label class="control-label" for="end">End Date</label>
 
                         <div class="controls">
                             <?php
                             echo $this->Form->input(
-                                'end', array(
+                                'end_date', array(
                                 'class' => 'tip span3 date-picker',
                                 'placeholder' => 'Enter End Date',
                                 'id' => 'end',
                                 'type' => 'text',
-                                'label' => false,
                                 'value' => date('d-m-Y')
                             ));
                             ?>
@@ -84,15 +88,15 @@
                         <h3>Project Requirements</h3>
                     </div>
 
-                    <div class="control-group info project-requirements">
+                    <div class="control-group info project-requirements" id="project-requirements" >
                         <div class="add-more">
                             <button type="button" class="btn btn-primary btn-small" id="addMore">Add More</button>
                         </div>
 
-                        <div class="requirements">
+                        <div class="requirements" id="requirements">
                             <span class="pull-left">
                             <?php
-                                echo $this->Form->input('ProjectTechnologies.1.technology_id', array(
+                                echo $this->Form->input('ProjectResourceRequirements.1.technology_id', array(
                                     'options' => $technologies,
                                     'div' => false,
                                     'label' => false,
@@ -107,7 +111,7 @@
                                     45 => 45, 50 => 50, 55 => 55, 60 => 60, 65 => 65, 70 => 70, 75 => 75, 80 => 80,
                                     85 => 85, 90 => 90, 95 => 95, 100 => 100
                                 );
-                                echo $this->Form->input('ProjectTechnologies.1.required_percentage', array(
+                                echo $this->Form->input('ProjectResourceRequirements.1.required_percentage', array(
                                     'options' => $percentages,
                                     'div' => false,
                                     'label' => false,
@@ -116,7 +120,7 @@
                         </span>
                             <span class="pull-left">
                             <?php
-                                echo $this->Form->input('ProjectTechnologies.1.number_of_resources', array(
+                                echo $this->Form->input('ProjectResourceRequirements.1.number_of_resources', array(
                                     'options' => array(
                                         1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5, 6 => 6, 7 => 7,
                                         8 => 8, 9 => 9, 10 => 10
@@ -134,7 +138,7 @@
 
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">Save changes</button>
-                    <button type="reset" class="btn">Cancel</button>
+                    <a href="/projects/all_projects" class="btn">Cancel</a>
                 </div>
 
                 <?php echo $this->Form->end(); ?>
@@ -142,4 +146,3 @@
         </div>
     </section>
 </div>
-

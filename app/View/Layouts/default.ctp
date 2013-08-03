@@ -56,6 +56,24 @@ $cakeDescription = __d('cake_dev', $appName);
             padding-bottom: 40px;
         }
     </style>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        jQuery(function () {
+            if ($('#flashMessage').length > 0 || $('#authMessage').length > 0) {
+                $('#NotifyMessage').slideDown('fast');
+                $('#flashMessage').delay(25000).slideUp(function () {
+                    $(this).hide();
+                });
+                $('#authMessage').delay(25000).slideUp();
+
+                $('#NotifyMessage').delay(25000).slideUp();
+            } else {
+                $('#flashMessage').hide();
+                $('#NotifyMessage').hide();
+            }
+        });
+            </script>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -68,6 +86,7 @@ $cakeDescription = __d('cake_dev', $appName);
 <div class="container">
     <?php
     echo $this->Session->flash();
+    echo $this->Session->flash('auth');
     echo $this->fetch('content');
     ?>
     <hr>

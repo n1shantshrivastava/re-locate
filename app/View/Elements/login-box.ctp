@@ -2,7 +2,6 @@
 <div class="span4">
     <div class="hero-unit">
         <?php
-        echo $this->Session->flash('auth');
         echo $this->Form->create('User' , array('url' => array('plugin' => false , 'controller' => 'users' , 'action' => ''))); ?>
         <fieldset>
             <legend><?php echo __('User Login'); ?></legend>

@@ -102,7 +102,7 @@ class Controller extends Object implements CakeEventListener {
  * @var CakeRequest
  * @link http://book.cakephp.org/2.0/en/controllers/request-response.html#cakerequest
  */
-	public $request;
+//	public $request;
 
 /**
  * An instance of a CakeResponse object that contains information about the impending response
