@@ -85,12 +85,24 @@ class ProjectsController extends AppController {
 
             $projectResourceRequirement = $this->request->data['ProjectResourceRequirements'];
             $this->Project->create();
+            $technologyAlloted = array();
             if ($this->Project->save($this->request->data)) {
                 $this->log('>>>> SUCCESS : Saved Project Data');
                 $projectId = $this->Project->id;
 
                 foreach ($projectResourceRequirement as $key => $value) {
                     $projectResourceRequirement[$key]['project_id'] = $projectId;
+                    $technologyAlloted[] = $value['technology_id'];
+                }
+
+                $technologyAlloted = array_unique($technologyAlloted);
+
+                foreach($technologyAlloted as $alloted) {
+                    if($this->Project->ProjectTechnology->save(array('project_id' => $projectId,'technology_id' => $alloted))) {
+                        $this->log('>>>> SUCCESS | ProjectTechnology Saved for ProjectId : ' . $projectId . "Technology Id : " . $alloted);
+                    } else {
+                        $this->log('>>>> FAILED | ProjectTechnology could not be Saved for ProjectId : ' . $projectId . "Technology Id : " . $alloted);
+                    }
                 }
 
                 if ($this->Project->ProjectResourceRequirement->saveAll($projectResourceRequirement)) {
