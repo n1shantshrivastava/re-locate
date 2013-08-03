@@ -35,8 +35,8 @@ class AppController extends Controller {
 
     public $applicationName = '';
     public $loggedInUserId = '';
-    public $loggedInUserType = '';
     public $loggedInUserName = '';
+    public $loggedInUserRole = '';
 
     public $components = array('Auth', 'Session');
 
@@ -49,7 +49,7 @@ class AppController extends Controller {
         $this->Auth->authError = 'You are not authorized user, please enter username and password.';
         $this->Auth->authenticate = array(
             'Form' => array(
-                'scope' => array('User.is_active' => 1, 'User.is_verified' => 1,)
+                'scope' => array('User.is_active' => 1, 'User.is_verified' => 1, 'User.role_id' => 1,)
             )
         );
     }
@@ -57,6 +57,18 @@ class AppController extends Controller {
     public function beforeRender() {
         parent::beforeRender();
         $appName = Configure::read('APPLICATION_NAME');
-        $this->set(compact('appName'));
+
+        $loggedInUserId = $this->loggedInUserId = $this->loggedInUserId();
+        $loggedInUserRole = $this->loggedInUserRole = $this->loggedInUserRole();
+
+        $this->set(compact('appName','loggedInUserId','loggedInUserRole'));
+    }
+
+    public function loggedInUserId() {
+        return $this->Auth->user('id') != '' ? $this->Auth->user('id') : false;
+    }
+
+    public function loggedInUserRole() {
+        return $this->Auth->user('role_id') != '' ? $this->Auth->user('role_id') : false;
     }
 }
