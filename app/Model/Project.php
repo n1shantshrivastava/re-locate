@@ -19,7 +19,7 @@ class Project extends AppModel {
 		'ProjectResourceRequirement' => array(
 			'className' => 'ProjectResourceRequirement',
 			'foreignKey' => 'project_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -32,7 +32,7 @@ class Project extends AppModel {
 		'ProjectTechnology' => array(
 			'className' => 'ProjectTechnology',
 			'foreignKey' => 'project_id',
-			'dependent' => false,
+			'dependent' => true,
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
@@ -41,7 +41,20 @@ class Project extends AppModel {
 			'exclusive' => '',
 			'finderQuery' => '',
 			'counterQuery' => ''
-		)
+		),
+        'ProjectUser' => array(
+            'className' => 'ProjectUser',
+            'foreignKey' => 'project_id',
+            'dependent' => true,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        )
 	);
 
 }

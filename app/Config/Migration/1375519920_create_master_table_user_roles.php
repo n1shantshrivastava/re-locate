@@ -65,10 +65,6 @@ class CreateMasterTableUserRoles extends CakeMigration {
             );
             $roleModel->saveAll($roleData);
 
-            //            $query = "SELECT nextval('users_id_seq')";
-            //            $userModel->query($query);
-            //            $query = "SELECT nextval('users_roles_id_seq')";
-            //            $usersRoleModel->query($query);
         }
 		return true;
 	}
