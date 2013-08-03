@@ -1,9 +1,9 @@
 .logo {
-    height: 45px;
+    height: 15px;
     width: 300px;
     display: block;
     text-indent: -5000px;
-    background: url("../../img/relocate-300.png");
+    background: url("../img/relocate-300.png");
     /*margin: 10px 0 10px 20px;*/
     /*float: left;*/
 }

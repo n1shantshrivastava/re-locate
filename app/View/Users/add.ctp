@@ -3,20 +3,13 @@ echo $this->Html->script(array('validations'), false);
 ?>
 
 <div class="row">
-    <div class="span3">
-        <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-                <li><?php echo $this->Html->link(__('List Users'), array('action' => 'dashboard'));?></li>
-            </ul>
-        </div>
-    </div>
-    <div class="span9">
+    <div class="users index">
         <div class="hero-unit">
             <h2><?php  echo __('User');?></h2>
             <?php echo $this->Form->create('User', array('inputDefaults' => array('label' => false, 'div' => false)));?>
-            <table class="table">
+            <table class="table table-striped">
                 <tr>
-                    <td><?php echo __('Email Id'); ?></td>
+                    <td width="40%"><?php echo __('Email Id'); ?></td>
                     <td><?php echo $this->Form->input('username');?></td>
                 </tr>
                 <tr>
@@ -81,7 +74,7 @@ echo $this->Html->script(array('validations'), false);
                     <td>&nbsp;</td>
                     <td><?php echo $this->Form->submit(__('Submit', true), array('div' => false, 'class' => 'btn btn-primary'));
                         echo '&nbsp;&nbsp;';
-                        echo $this->Html->link(__('Cancel', true), 'javascript: void(0);', array('onclick' => 'javascript:history.go(-1);', 'class' => 'btn', 'title' => 'Cancel'))
+                        echo $this->Html->link(__('Cancel', true), array('action'=>'dashboard'), array('class' => 'btn', 'title' => 'Cancel'))
                         ?></td>
                 </tr>
             </table>

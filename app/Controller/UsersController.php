@@ -12,12 +12,27 @@ class UsersController extends AppController {
         $this->Auth->allow('index');
     }
 
+    public function beforeRender(){
+        parent::beforeRender();
+        if($this->loggedInUserId() != ''){
+            $tab = 'users';
+        } else {
+            $tab = '';
+        }
+        $this->set(compact('tab'));
+    }
+
     /**
      * index method
      *
      * @return void
      */
     public function index() {
+        if($this->loggedInUserId() != '' && $this->loggedInUserRole() == 1){
+            $this->redirect(array('action' => 'dashboard'));
+        } else {
+            $this->redirect(array('action' => 'login'));
+        }
     }
 
     public function login() {
