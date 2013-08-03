@@ -7,14 +7,14 @@ $(document).ready(function(){
 
         $('.objectBox-frontend').masonry({
             // options
-            itemSelector : '.object',
+            itemSelector : '.draggableObjects-frontend',
             columnWidth: 10,
             cornerStampSelector: ''
         });
 
         $('.circleBox-frontend').masonry({
             // options
-            itemSelector : '.object',
+            itemSelector : '.draggableObjects-frontend',
             columnWidth: 10,
             cornerStampSelector: '.corner-stamp'
         });
@@ -27,7 +27,7 @@ $(document).ready(function(){
     function displayObjectsFromDatabase(objectId) {
 //        console.log('displayObjects method called');
 
-        $.each(objectDatabasephp, function(i, v) {
+        $.each(objectDatabasefrontend, function(i, v) {
             genericAdd(objectId, v.title,v.image,v.url);
         });
     }
@@ -53,23 +53,13 @@ $(document).ready(function(){
         }
 
         if(null!=object_url && $.trim(object_url)!="") {
-            object_url_html='<div class="data"><a href="'+object_url+'">'+object_title+'</a></div>';
+            object_url_html='<div class="data"><a href="'+object_url+'" id="'+object_url+'">'+object_title+'</a></div>';
         } else {
-            object_url_html='<div class="data">'+object_title+'</div>';
+            object_url_html='<div class="data" id="'+object_url+'">'+object_title+'</div>';
         }
 
         if(null!=object_image && $.trim(object_image)!="") {
-            object_image_html='<div class="object-img" style="background-image:url('+object_image+'); "></div>';
-            /*
-             //preload the image-------
-             Image1= new Image();
-             Image1.src = pin_image;
-             Image1.onload=function() {
-             attachPin(pin_image_html,pin_url_html);
-             return;
-             };
-             //------------------------
-             */
+            object_image_html='<div class="object-img" style="background-image:url('+object_image+'); " id="'+object_url+'" ></div>';
         }
 
         attachObject(objectId, object_image_html,object_url_html)
@@ -145,7 +135,7 @@ $(document).ready(function(){
         $('.objectBox-frontend').hide();
         $('.circleBox-frontend').show();
 
-        $('.circleBox-frontend').masonry('remove',$('.object')).masonry('reload');
+        $('.circleBox-frontend').masonry('remove',$('.draggableObjects-frontend')).masonry('reload');
 
         $(bigCircleId).children(resultCircleClass).each(function(){
             var context = $(this);

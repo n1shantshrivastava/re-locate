@@ -87,4 +87,15 @@ class Project extends AppModel {
         return $projectData;
     }
 
+    public function saveProjectUser($data){
+        $getExistUser = $this->ProjectsUser->find('first',array('ProjectsUser.project_id'=>$data['project_id'],'ProjectsUser.user_id'=>$data['user_id']));
+        if(!empty($getExistUser)){
+            $this->ProjectsUser->create();
+            return $this->ProjectsUser->save($data);
+        }else{
+            return false;
+        }
+
+    }
+
 }

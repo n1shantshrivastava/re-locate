@@ -17,6 +17,7 @@ class ProjectsController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
+        $this->Auth->allow('*');
     }
 
     public function beforeRender() {
@@ -137,5 +138,23 @@ class ProjectsController extends AppController {
                 return json_encode(array());
             }
         }
+    }
+
+    public function add_project_resource(){
+
+        $this->autoRender = false;
+        $respoceArray = array();
+        if(!empty($this->request->data) && $this->request->data['user_id']!="" && $this->request->data['project_id']){
+            $saveProjectUser  = $this->Project->saveProjectUser($this->request->data);
+            if($saveProjectUser){
+                $respoceArray = array('status'=>'success','message'=>'users allocated successfully.');
+            }else{
+                $respoceArray = array('status'=>'error','message'=>'User already added for this project');
+            }
+
+        }else{
+            $respoceArray = array('status'=>'error','message'=>'Required fields are missing');
+        }
+        return json_encode($respoceArray);
     }
 }

@@ -7,14 +7,14 @@ $(document).ready(function(){
 
         $('.objectBox-ui-ux').masonry({
             // options
-            itemSelector : '.object',
+            itemSelector : '.draggableObjects-ui-ux',
             columnWidth: 10,
             cornerStampSelector: ''
         });
 
         $('.circleBox-ui-ux').masonry({
             // options
-            itemSelector : '.object',
+            itemSelector : '.draggableObjects-ui-ux',
             columnWidth: 10,
             cornerStampSelector: '.corner-stamp'
         });
@@ -27,7 +27,7 @@ $(document).ready(function(){
     function displayObjectsFromDatabase(objectId) {
 //        console.log('displayObjects method called');
 
-        $.each(objectDatabasephp, function(i, v) {
+        $.each(objectDatabaseuiux, function(i, v) {
             genericAdd(objectId, v.title,v.image,v.url);
         });
     }
@@ -53,23 +53,13 @@ $(document).ready(function(){
         }
 
         if(null!=object_url && $.trim(object_url)!="") {
-            object_url_html='<div class="data"><a href="'+object_url+'">'+object_title+'</a></div>';
+            object_url_html='<div class="data"><a href="'+object_url+'" id="'+object_url+'">'+object_title+'</a></div>';
         } else {
-            object_url_html='<div class="data">'+object_title+'</div>';
+            object_url_html='<div class="data" id="'+object_url+'">'+object_title+'</div>';
         }
 
         if(null!=object_image && $.trim(object_image)!="") {
-            object_image_html='<div class="object-img" style="background-image:url('+object_image+'); "></div>';
-            /*
-             //preload the image-------
-             Image1= new Image();
-             Image1.src = pin_image;
-             Image1.onload=function() {
-             attachPin(pin_image_html,pin_url_html);
-             return;
-             };
-             //------------------------
-             */
+            object_image_html='<div class="object-img" style="background-image:url('+object_image+'); " id="'+object_url+'" ></div>';
         }
 
         attachObject(objectId, object_image_html,object_url_html)
@@ -108,7 +98,7 @@ $(document).ready(function(){
 
     $(".draggableObjects-ui-ux").bind('dragstart',onDragStart,false);
 
-    $(".mainContainer-ui-uxn-rails").droppable({
+    $(".mainContainer-ui-ux").droppable({
         accept: ".draggableObjects-ui-ux",
         activeClass: "ui-state-highlight",
         drop: function(event, ui) {
@@ -145,7 +135,7 @@ $(document).ready(function(){
         $('.objectBox-ui-ux').hide();
         $('.circleBox-ui-ux').show();
 
-        $('.circleBox-ui-ux').masonry('remove',$('.object')).masonry('reload');
+        $('.circleBox-ui-ux').masonry('remove',$('.draggableObjects-ui-ux')).masonry('reload');
 
         $(bigCircleId).children(resultCircleClass).each(function(){
             var context = $(this);
@@ -153,7 +143,7 @@ $(document).ready(function(){
             $('.circleBox-ui-ux').append(object).masonry('appended',object);
         });
 
-        $('.draggableObjects:not(.ui-draggable)').draggable({
+        $('.draggableObjects-ui-ux:not(.ui-draggable)').draggable({
             cancel: "a.ui-icon",
             revert: "invalid",
             containment: "document",
