@@ -97,30 +97,31 @@ class Project extends AppModel {
 
 
     public function getProjectDataById($id){
-        $this->recursive=2;
+        $this->recursive=3;
 //        $this->ProjectResourceRequirement->unbindModel(array('belongsTo'=>array('Project','Technology')));
 //        $this->ProjectResourceRequirement->Technology->bindModel(array('hasMany'=>array('User')));
         $this->ProjectTechnology->unbindModel(array('belongsTo'=>array('Project')));
         $this->ProjectsUser->unbindModel(array('belongsTo'=>array('Project')));
         $projectData =  $this->read(null, $id);
         if(!empty($projectData)){
-            $technologyIds = array();
-            if(!empty($projectData['ProjectResourceRequirement'])){
-                foreach($projectData['ProjectResourceRequirement'] as $projectTechnology){
-                    $technologyIds[] = $projectTechnology['technology_id'];
+            $userIds = array();
+            if(!empty($projectData['ProjectsUser'])){
+                foreach($projectData['ProjectsUser'] as $projectUserKey =>  $projectUser){
+                    $userIds[] = $projectUser['user_id'];
+
                 }
             }
-            foreach($projectData['ProjectResourceRequirement'] as $key => $projectTechnology){
-                if(!empty($technologyIds)){
-                    $conditions = array('User.technology_id'=>$technologyIds);
+            foreach($projectData['ProjectTechnology'] as $key => $projectTechnology){
+                if(!empty($userIds)){
+                    $conditions = array('User.technology_id'=>$projectTechnology['technology_id'],array('NOT'=>array('User.id'=>$userIds)));
                     $this->ProjectsUser->User->recursive = -1;
-                    $projectData['ProjectResourceRequirement'][$key]['ProjectsUser'] = $this->ProjectsUser->User->find('all',array('conditions'=>array('User.technology_id'=>$technologyIds)));
+                    $projectData['ProjectTechnology'][$key]['ProjectsUser'] = $this->ProjectsUser->User->find('all',array('conditions'=>array('User.technology_id'=>$projectTechnology['technology_id'],'User.id'=>$userIds)));
                 }else{
-                    $conditions = '';
+                    $conditions = array('User.technology_id'=>$projectTechnology['technology_id']);
                 }
                 $this->ProjectsUser->User->recursive = -1;
                 $resourceData = $this->ProjectsUser->User->find('all', array('conditions'=>$conditions,'fields'=>array('id','first_name','last_name','technology_id')));
-                $projectData['ProjectResourceRequirement'][$key]['User'] = $resourceData;
+                $projectData['ProjectTechnology'][$key]['User'] = $resourceData;
 
             }
         }
