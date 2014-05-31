@@ -51,4 +51,29 @@ class Technology extends AppModel {
         ));
     }
 
+    public function getTechnologyUserCount() {
+        $this->virtualFields['employee_count'] = 'count(User.id)';
+
+        $result = $this->find('all',array(
+            'fields' => array(
+                'Technology.id','Technology.stream_name','Technology.employee_count'
+            ),
+            'joins' => array(
+                array(
+                    'table' => 'users',
+                    'alias' => 'User',
+                    'type'  => 'LEFT',
+                    'conditions' =>array(
+                        'Technology.id = User.technology_id'
+                    )
+                )
+            ),
+            'group'=> array(
+                'Technology.id'
+            ),
+            'recursive' => -1
+        ));
+        return $result;
+    }
+
 }

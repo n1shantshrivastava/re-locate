@@ -2,7 +2,7 @@
     <!-- Forms
    ================================================== -->
     <section id="forms">
-        <input type="hidden" name="project_id" id="projectId" value="<?php echo h($project['Project']['id']); ?>"/>
+        <input type="hidden" name="project_id" id="projectId" value="<?php echo ($project['Project']['id']); ?>"/>
         <div class="row">
             <div class="span11">
                 <div class="form-horizontal well control-group">
@@ -47,13 +47,13 @@
                                                         <div
                                                             class="resultCircle  <?php echo "resultCircle-" . $technology['Technology']['slug'] . " r" . $technology['Technology']['id']?>">
                                                         <div class="object-img" style="background-image:url(<?php echo $imagePath; ?>)" id="<?php echo $userExistData['User']['id']; ?>"></div>
-                                                        <div class="data"><a href="<?php echo $userExistData['User']['id']; ?>" id="<?php echo $userExistData['User']['id']; ?>"><?php echo $userExistData['User']['first_name'].' '.$userExistData['User']['last_name']; ?></a></div>
+                                                        <div class="data"><a href="/users/view/<?php echo $userExistData['User']['id']; ?>" id="<?php echo $userExistData['User']['id']; ?>"><?php echo $userExistData['User']['first_name'].' '.$userExistData['User']['last_name']; ?></a></div>
                                                         </div>
                                                         <?php
                                                     }
                                                 ?>
                                                 <script type="text/javascript" >
-                                                    TweenLite.to($("#b"<?php echo $technology['Technology']['id']; ?>), 0.2, {css:{width:150, height:150, marginLeft:-20, marginTop:-20}, ease:Power2.easeOut, onComplete:function () {
+                                                    TweenLite.to($("#b<?php echo $technology['Technology']['id']; ?>"), 0.2, {css:{width:150, height:150, marginLeft:-20, marginTop:-20}, ease:Power2.easeOut, onComplete:function () {
                                                         calculatePositionsphp(<?php echo $technology['Technology']['id']; ?>);
                                                     }
                                                     });
