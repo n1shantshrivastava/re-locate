@@ -14,11 +14,6 @@ class UsersController extends AppController {
 
     public function beforeRender() {
         parent::beforeRender();
-        if ($this->loggedInUserId() != '') {
-            $tab = 'users';
-        } else {
-            $tab = '';
-        }
         $this->set(compact('tab'));
     }
 
@@ -61,12 +56,14 @@ class UsersController extends AppController {
     public function all_users() {
         $this->User->recursive = 0;
         $users = $this->paginate('User', array('User.role_id != ' => 1));
-        $this->set('users', $users);
+        $tab = 'users';
+        $this->set(compact('users','tab'));
     }
 
     public function dashboard() {
         $this->User->recursive = 0;
         $projects = $this->User->ProjectsUser->Project->getActiveProjects();
+
         $teams= $this->User->Technology->getTechnologyUserCount();
         $projects = $this->User->ProjectsUser->Project->getProjectUserCount();
         $projects = array_values($projects);
@@ -86,7 +83,8 @@ class UsersController extends AppController {
 
     public function user_dashboard() {
         $this->autoRender = false;
-
+        $tab = 'dashboard';
+        $this->set(compact('projects','tab'));
     }
 
     /**
@@ -100,7 +98,9 @@ class UsersController extends AppController {
         if (!$this->User->exists()) {
             throw new NotFoundException(__('Invalid user'));
         }
-        $this->set('user', $this->User->read(null, $id));
+        $user = $this->User->read(null, $id);
+        $tab = 'users';
+        $this->set(compact('user','tab'));
     }
 
     /**
@@ -120,7 +120,8 @@ class UsersController extends AppController {
         }
         $roles = $this->User->Role->getList();
         $technologies = $this->User->Technology->getList();
-        $this->set(compact('technologies', 'roles'));
+        $tab = 'users';
+        $this->set(compact('technologies', 'roles','tab'));
     }
 
     /**
@@ -144,7 +145,8 @@ class UsersController extends AppController {
         } else {
             $this->request->data = $this->User->read(null, $id);
             $technologies = $this->User->Technology->getList();
-            $this->set(compact('technologies'));
+            $tab = 'users';
+            $this->set(compact('technologies','tab'));
         }
     }
 

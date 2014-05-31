@@ -39,7 +39,7 @@ class ProjectsController extends AppController {
         if ($this->loggedInUserId() != '' && $this->loggedInUserRole() == 1) {
             $this->redirect(array('action' => 'all_projects'));
         } else {
-            $this->redirect(array('action' => 'login'));
+            $this->redirect(array('controller'=>'users', 'action' => 'login'));
         }
     }
 
@@ -65,8 +65,6 @@ class ProjectsController extends AppController {
         if (!$this->Project->exists()) {
             throw new NotFoundException(__('Invalid project'));
         }
-        //        $this->Project->recursive=2;
-        //        $project = $this->Project->read(null, $id);
         $project = $this->Project->getProjectDataById($id);
         $this->set(compact('project'));
     }
@@ -173,8 +171,7 @@ class ProjectsController extends AppController {
         $this->redirect(array('action' => 'index'));
     }
 
-    public
-    function getAllTechnologies() {
+    public function getAllTechnologies() {
         $this->autoRender = false;
         if ($this->request->is('get') && empty($this->request->data)) {
             $technologies = array();
@@ -187,8 +184,7 @@ class ProjectsController extends AppController {
         }
     }
 
-    public
-    function add_project_resource() {
+    public function add_project_resource() {
 
         $this->autoRender = false;
         $respoceArray = array();
