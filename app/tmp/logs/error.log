@@ -4295,3 +4295,165 @@
 
 )
 
+2014-05-30 18:10:05 Error: [MissingConnectionException] Database connection "SQLSTATE[HY000] [1049] Unknown database 'relocate'" is missing, or could not be created.
+#0 E:\re-locate\lib\Cake\Model\Datasource\DboSource.php(245): Mysql->connect()
+#1 E:\re-locate\lib\Cake\Model\ConnectionManager.php(101): DboSource->__construct(Array)
+#2 E:\re-locate\lib\Cake\Model\Model.php(3382): ConnectionManager::getDataSource('default')
+#3 E:\re-locate\lib\Cake\Model\Model.php(1083): Model->setDataSource('default')
+#4 E:\re-locate\lib\Cake\Model\Model.php(3408): Model->setSource('users')
+#5 E:\re-locate\lib\Cake\Model\Model.php(1276): Model->getDataSource()
+#6 E:\re-locate\lib\Cake\View\Helper\FormHelper.php(196): Model->schema()
+#7 E:\re-locate\lib\Cake\View\Helper\FormHelper.php(450): FormHelper->_introspectModel('User', 'fields')
+#8 E:\re-locate\app\View\Elements\login-box.ctp(5): FormHelper->create('User', Array)
+#9 E:\re-locate\lib\Cake\View\View.php(908): include('E:\\re-locate\\ap...')
+#10 E:\re-locate\lib\Cake\View\View.php(872): View->_evaluate('E:\\re-locate\\ap...', Array)
+#11 E:\re-locate\lib\Cake\View\View.php(412): View->_render('E:\\re-locate\\ap...', Array)
+#12 E:\re-locate\app\View\Users\login.ctp(2): View->element('login-box')
+#13 E:\re-locate\lib\Cake\View\View.php(908): include('E:\\re-locate\\ap...')
+#14 E:\re-locate\lib\Cake\View\View.php(872): View->_evaluate('E:\\re-locate\\ap...', Array)
+#15 E:\re-locate\lib\Cake\View\View.php(463): View->_render('E:\\re-locate\\ap...')
+#16 E:\re-locate\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#17 E:\re-locate\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#18 E:\re-locate\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#19 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#20 {main}
+2014-05-30 18:11:54 Error: [MissingConnectionException] Database connection "SQLSTATE[HY000] [1049] Unknown database 'relocate'" is missing, or could not be created.
+#0 E:\re-locate\lib\Cake\Model\Datasource\DboSource.php(245): Mysql->connect()
+#1 E:\re-locate\lib\Cake\Model\ConnectionManager.php(101): DboSource->__construct(Array)
+#2 E:\re-locate\lib\Cake\Model\Model.php(3382): ConnectionManager::getDataSource('default')
+#3 E:\re-locate\lib\Cake\Model\Model.php(1083): Model->setDataSource('default')
+#4 E:\re-locate\lib\Cake\Model\Model.php(3408): Model->setSource('users')
+#5 E:\re-locate\lib\Cake\Model\Model.php(1276): Model->getDataSource()
+#6 E:\re-locate\lib\Cake\View\Helper\FormHelper.php(196): Model->schema()
+#7 E:\re-locate\lib\Cake\View\Helper\FormHelper.php(450): FormHelper->_introspectModel('User', 'fields')
+#8 E:\re-locate\app\View\Elements\login-box.ctp(5): FormHelper->create('User', Array)
+#9 E:\re-locate\lib\Cake\View\View.php(908): include('E:\\re-locate\\ap...')
+#10 E:\re-locate\lib\Cake\View\View.php(872): View->_evaluate('E:\\re-locate\\ap...', Array)
+#11 E:\re-locate\lib\Cake\View\View.php(412): View->_render('E:\\re-locate\\ap...', Array)
+#12 E:\re-locate\app\View\Users\login.ctp(2): View->element('login-box')
+#13 E:\re-locate\lib\Cake\View\View.php(908): include('E:\\re-locate\\ap...')
+#14 E:\re-locate\lib\Cake\View\View.php(872): View->_evaluate('E:\\re-locate\\ap...', Array)
+#15 E:\re-locate\lib\Cake\View\View.php(463): View->_render('E:\\re-locate\\ap...')
+#16 E:\re-locate\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#17 E:\re-locate\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#18 E:\re-locate\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#19 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#20 {main}
+2014-05-30 18:18:22 Error: [MissingControllerException] Controller class XamppController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-30 18:19:10 Error: [MissingTableException] Table users for model User was not found in datasource default.
+#0 E:\re-locate\lib\Cake\Model\Model.php(3408): Model->setSource('users')
+#1 E:\re-locate\lib\Cake\Model\Model.php(1276): Model->getDataSource()
+#2 E:\re-locate\lib\Cake\View\Helper\FormHelper.php(196): Model->schema()
+#3 E:\re-locate\lib\Cake\View\Helper\FormHelper.php(450): FormHelper->_introspectModel('User', 'fields')
+#4 E:\re-locate\app\View\Elements\login-box.ctp(5): FormHelper->create('User', Array)
+#5 E:\re-locate\lib\Cake\View\View.php(908): include('E:\\re-locate\\ap...')
+#6 E:\re-locate\lib\Cake\View\View.php(872): View->_evaluate('E:\\re-locate\\ap...', Array)
+#7 E:\re-locate\lib\Cake\View\View.php(412): View->_render('E:\\re-locate\\ap...', Array)
+#8 E:\re-locate\app\View\Users\login.ctp(2): View->element('login-box')
+#9 E:\re-locate\lib\Cake\View\View.php(908): include('E:\\re-locate\\ap...')
+#10 E:\re-locate\lib\Cake\View\View.php(872): View->_evaluate('E:\\re-locate\\ap...', Array)
+#11 E:\re-locate\lib\Cake\View\View.php(463): View->_render('E:\\re-locate\\ap...')
+#12 E:\re-locate\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#13 E:\re-locate\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#14 E:\re-locate\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2014-05-30 18:29:13 Error: [MissingTableException] Table users for model User was not found in datasource default.
+#0 E:\re-locate\lib\Cake\Model\Model.php(3408): Model->setSource('users')
+#1 E:\re-locate\lib\Cake\Model\Model.php(1276): Model->getDataSource()
+#2 E:\re-locate\lib\Cake\View\Helper\FormHelper.php(196): Model->schema()
+#3 E:\re-locate\lib\Cake\View\Helper\FormHelper.php(450): FormHelper->_introspectModel('User', 'fields')
+#4 E:\re-locate\app\View\Elements\login-box.ctp(5): FormHelper->create('User', Array)
+#5 E:\re-locate\lib\Cake\View\View.php(908): include('E:\\re-locate\\ap...')
+#6 E:\re-locate\lib\Cake\View\View.php(872): View->_evaluate('E:\\re-locate\\ap...', Array)
+#7 E:\re-locate\lib\Cake\View\View.php(412): View->_render('E:\\re-locate\\ap...', Array)
+#8 E:\re-locate\app\View\Users\login.ctp(2): View->element('login-box')
+#9 E:\re-locate\lib\Cake\View\View.php(908): include('E:\\re-locate\\ap...')
+#10 E:\re-locate\lib\Cake\View\View.php(872): View->_evaluate('E:\\re-locate\\ap...', Array)
+#11 E:\re-locate\lib\Cake\View\View.php(463): View->_render('E:\\re-locate\\ap...')
+#12 E:\re-locate\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#13 E:\re-locate\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#14 E:\re-locate\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2014-05-30 18:36:08 Error: [MissingTableException] Table users for model User was not found in datasource default.
+#0 E:\re-locate\lib\Cake\Model\Model.php(3408): Model->setSource('users')
+#1 E:\re-locate\lib\Cake\Model\Model.php(1276): Model->getDataSource()
+#2 E:\re-locate\lib\Cake\View\Helper\FormHelper.php(196): Model->schema()
+#3 E:\re-locate\lib\Cake\View\Helper\FormHelper.php(450): FormHelper->_introspectModel('User', 'fields')
+#4 E:\re-locate\app\View\Elements\login-box.ctp(5): FormHelper->create('User', Array)
+#5 E:\re-locate\lib\Cake\View\View.php(908): include('E:\\re-locate\\ap...')
+#6 E:\re-locate\lib\Cake\View\View.php(872): View->_evaluate('E:\\re-locate\\ap...', Array)
+#7 E:\re-locate\lib\Cake\View\View.php(412): View->_render('E:\\re-locate\\ap...', Array)
+#8 E:\re-locate\app\View\Users\login.ctp(2): View->element('login-box')
+#9 E:\re-locate\lib\Cake\View\View.php(908): include('E:\\re-locate\\ap...')
+#10 E:\re-locate\lib\Cake\View\View.php(872): View->_evaluate('E:\\re-locate\\ap...', Array)
+#11 E:\re-locate\lib\Cake\View\View.php(463): View->_render('E:\\re-locate\\ap...')
+#12 E:\re-locate\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#13 E:\re-locate\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#14 E:\re-locate\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2014-05-30 19:58:31 Error: >>> Inside Migrations | SUCCESS : Role Entry for super-admin done.
+2014-05-30 19:58:31 Error: >>> Inside Migrations | SUCCESS : Super-Admin entry done.
+2014-05-31 08:33:31 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:34:08 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:35:19 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:35:19 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:35:59 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:35:59 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:36:35 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:36:35 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:37:56 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:37:56 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:38:29 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:38:29 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:38:34 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:38:34 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 08:39:03 Error: [MissingControllerException] Controller class WebrootController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 16:02:23 Error: [PDOException] SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Role.role' in 'field list'
+#0 E:\re-locate\lib\Cake\Model\Datasource\DboSource.php(437): PDOStatement->execute(Array)
+#1 E:\re-locate\lib\Cake\Model\Datasource\DboSource.php(403): DboSource->_execute('SELECT `Role`.`...', Array)
+#2 E:\re-locate\lib\Cake\Model\Datasource\DboSource.php(647): DboSource->execute('SELECT `Role`.`...', Array, Array)
+#3 E:\re-locate\lib\Cake\Model\Datasource\DboSource.php(1058): DboSource->fetchAll('SELECT `Role`.`...', false)
+#4 E:\re-locate\lib\Cake\Model\Model.php(2663): DboSource->read(Object(Role), Array)
+#5 E:\re-locate\app\Model\Role.php(37): Model->find('list', Array)
+#6 E:\re-locate\app\Controller\UsersController.php(102): Role->getList()
+#7 [internal function]: UsersController->add()
+#8 E:\re-locate\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#9 E:\re-locate\lib\Cake\Routing\Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#10 E:\re-locate\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#11 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}

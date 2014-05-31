@@ -15,7 +15,7 @@ class ExistBehavior extends ModelBehavior {
      * @param array $config array of configuration settings.
      * @return void
      */
-    public function setup(Model $Model, $settings) {
+    public function setup(Model $Model, $settings = array() ) {
 
         if (!isset($this->settings[$Model->alias])) {
             $this->settings[$Model->alias] = array(
@@ -26,7 +26,7 @@ class ExistBehavior extends ModelBehavior {
             $this->settings[$Model->alias], (array)$settings);
     }
 
-    public function isExist(Model $Model, $query=array()){
+    public function isExist(& $Model, $query=array()){
         $table = $Model->table;
         $statement= '';
 
