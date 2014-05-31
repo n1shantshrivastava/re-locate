@@ -14,12 +14,12 @@ jQuery(function () {
 
 //    User form validations start
     jQuery("#UserUsername").validate({
-        expression:"if (VAL) return true; else return false;",
-        message:"Please enter the email id"
+        expression:"if (VAL) return true; else { $('#busy-indicator').hide(); $('#unavailable').hide(); $('#available').hide(); return false; }",
+        message:"<div>Please enter the email id</div>"
     });
     jQuery("#UserUsername").validate({
-        expression:"if (VAL.match(/^[^\\W][a-zA-Z0-9\\_\\-\\.]+([a-zA-Z0-9\\_\\-\\.]+)*\\@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_]+)*\\.[a-zA-Z]{2,4}$/)) return true; else return false;",
-        message:"Please enter valid email id"
+        expression:"if (VAL.match(/^[^\\W][a-zA-Z0-9\\_\\-\\.]+([a-zA-Z0-9\\_\\-\\.]+)*\\@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_]+)*\\.[a-zA-Z]{2,4}$/)) return true; else { $('#busy-indicator').hide(); $('#unavailable').hide(); $('#available').hide(); return false; }",
+        message:"<div>Please enter valid email id</div>"
     });
     jQuery("#UserUsername").validate({
         expression:"if (!check_user(VAL,1)) return true; else return false;",
@@ -28,66 +28,66 @@ jQuery(function () {
 
     jQuery("#UserPassword").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please enter the password"
+        message:"<div>Please enter the password</div>"
     });
     jQuery("#UserPassword").validate({
         expression:"if (VAL.length < 8 || VAL.length > 15) return false; else return true;",
-        message:"Password must contain 8-15 characters"
+        message:"<div>Password must contain 8-15 characters</div>"
     });
     jQuery("#UserPassword").validate({
         expression:"if (!(/[a-z]/i.test(VAL)) || !(/[0-9]/.test(VAL))) return false; else return true;",
-        message:"Password must be alphanumeric"
+        message:"<div>Password must be alphanumeric</div>"
     });
 
     jQuery("#UserFirstName").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please enter the first name"
+        message:"<div>Please enter the first name</div>"
     });
     jQuery("#UserFirstName").validate({
         expression:"if (VAL.match(/^[a-zA-Z ]+$/)) return true; else return false;",
-        message:"Please enter valid first name"
+        message:"<div>Please enter valid first name</div>"
     });
 
     jQuery("#UserLastName").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please enter the last name"
+        message:"<div>Please enter the last name</div>"
     });
     jQuery("#UserLastName").validate({
         expression:"if (VAL.match(/^[a-zA-Z ]+$/)) return true; else return false;",
-        message:"Please enter valid first name"
+        message:"<div>Please enter valid first name</div>"
     });
 
     jQuery("#UserEmployeeId").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please enter the employee id"
+        message:"<div>Please enter the employee id</div>"
     });
 
     jQuery("#UserSalary").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please enter the annual salary"
+        message:"<div>Please enter the annual salary</div>"
     });
     jQuery("#UserSalary").validate({
         expression:"if (VAL.match(/[1-9]/) && VAL > 0) return true; else return false;",
-        message:"Please enter valid annual salary"
+        message:"<div>Please enter valid annual salary</div>"
     });
 
     jQuery("#UserWorkExperience").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please enter the work experience"
+        message:"<div>Please enter the work experience</div>"
     });
     jQuery("#UserWorkExperience").validate({
         expression:"if (VAL.match(/[0-9]/)) return true; else return false;",
-        message:"Please enter valid work experience"
+        message:"<div>Please enter valid work experience</div>"
     });
 
     jQuery("#UserTechnologyId").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please select technology"
+        message:"<div>Please select technology</div>"
     });
 
     jQuery("#UserRoleId").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please select the role"
+        message:"<div>Please select the role</div>"
     });
 //    User form validations end
 
@@ -95,66 +95,66 @@ jQuery(function () {
 //    Project form validations start
     jQuery("#ProjectProjectName").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please enter the project name"
+        message:"<div>Please enter the project name</div>"
     });
     jQuery("#ProjectAccountName").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please enter the account name"
+        message:"<div>Please enter the account name</div>"
     });
     jQuery("#ProjectProjectType").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please enter the project type"
+        message:"<div>Please enter the project type</div>"
     });
     jQuery("#ProjectDescription").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please enter the project description"
+        message:"<div>Please enter the project description</div>"
     });
     jQuery("#start").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please enter the start date"
+        message:"<div>Please enter the start date</div>"
     });
     jQuery("#end").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please enter the end date"
+        message:"<div>Please enter the end date</div>"
     });
     jQuery("#ProjectTechnology1").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please select the technology"
+        message:"<div>Please select the technology</div>"
     });
     jQuery("#ProjectPercentage1").validate({
         expression:"if (VAL) return true; else return false;",
-        message:"Please select the percentages"
+        message:"<div>Please select the percentages</div>"
     });
 //    Project form validations end
 
     //for password change form
     jQuery("#UserChangePassword").validate({
         expression: "if (VAL) return true; else return false;",
-        message: "Please enter the password"
+        message: "<div>Please enter the password</div>"
     });
     jQuery("#UserChangePassword").validate({
         expression: "if (check_password(VAL)) return true; else return false;",
-        message: "Please enter valid old password"
+        message: "<div>Please enter valid old password</div>"
     });
     jQuery("#UserChangePassword").validate({
         expression: "if (VAL) return true; else return false;",
-        message: "Please enter new password"
+        message: "<div>Please enter new password</div>"
     });
     jQuery("#UserNewPassword").validate({
         expression: "if (!(/[a-z]/i.test(VAL)) || !(/[0-9]/.test(VAL))) return false; else return true;",
-        message: "Password must be alphanumeric"
+        message: "<div>Password must be alphanumeric</div>"
     });
     jQuery("#UserNewPassword").validate({
         expression: "if (VAL.length < 8 || VAL.length > 15) return false; else return true;",
-        message: "Password must contain 8-15 characters"
+        message: "<div>Password must contain 8-15 characters</div>"
     });
     jQuery("#UserConfirmPassword").validate({
         expression: "if (VAL) return true; else return false;",
-        message: "Please enter confirm password"
+        message: "<div>Please enter confirm password</div>"
     });
     jQuery("#UserConfirmPassword").validate({
         expression: "if ((VAL === jQuery('#UserNewPassword').val())) return true; else return false;",
-        message: "Passwords don't match"
+        message: "<div>Passwords don't match</div>"
     });
 });
 

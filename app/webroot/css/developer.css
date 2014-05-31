@@ -73,3 +73,6 @@
     margin-left: 196px;
     display: block;
 }
+.ValidationErrors {
+    color: red;
+}

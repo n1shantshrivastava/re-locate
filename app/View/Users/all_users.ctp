@@ -15,7 +15,8 @@
                 <th class="actions"><?php echo __('Actions');?></th>
             </tr>
             <?php
-            foreach ($users as $user): ?>
+            if(!empty($users)) {
+            foreach ($users as $user) { ?>
                 <tr>
                     <td><?php echo h($user['User']['employee_id']); ?>&nbsp;</td>
                     <td><?php echo h($user['User']['first_name']); ?>&nbsp;</td>
@@ -34,7 +35,10 @@
                         ); ?>
                     </td>
                 </tr>
-                <?php endforeach; ?>
+                <?php }
+            } else { ?>
+                <tr><td colspan="7">No users are added yet.</td> </tr>
+            <?php } ?>
         </table>
 
         <?php
