@@ -1,13 +1,11 @@
-<script type="text/javascript" src="/js/amcharts.js"></script>
-<script type="text/javascript" src="/js/pie.js"></script>
-<script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+
 <div class="projects form">
     <section id="forms">
         <div class="page-header">
             <h1>Dashboard</h1>
             <a href="">Teams<i></i></a>
             <div id="chartsiv"></div>
-            <a href="">Projects<i></i></a>
+            <a href="/projects/project_stats">Projects<i></i></a>
             <div id="chartdiv"></div>
 
         </div>

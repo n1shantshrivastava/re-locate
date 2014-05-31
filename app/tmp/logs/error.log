@@ -1,0 +1,65 @@
+2014-05-31 19:43:53 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 19:43:54 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 20:59:02 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 20:59:03 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 22:15:45 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 22:15:45 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 22:15:55 Error: 
+2014-05-31 22:16:01 Error: 
+2014-05-31 22:16:04 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 6
+            [project_id] => 1
+            [user_id] => 102
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2014-05-31 22:16:01
+            [modified] => 2014-05-31 22:16:01
+        )
+
+)
+
+2014-05-31 22:16:09 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 5
+            [project_id] => 1
+            [user_id] => 119
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2014-05-31 22:15:55
+            [modified] => 2014-05-31 22:15:55
+        )
+
+)
+
+2014-05-31 22:16:11 Error: 
+2014-05-31 22:16:25 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-05-31 22:16:26 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 E:\re-locate\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
