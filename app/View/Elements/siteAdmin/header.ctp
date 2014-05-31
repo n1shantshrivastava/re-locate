@@ -3,9 +3,12 @@ if (!isset($tab) || $tab == '') {
     $tab = 'users';
 }
 
-$users = $projects = '';
+$dashboard = $users = $projects = '';
 
 switch($tab){
+    case 'dashboard':
+        $dashboard = 'active';
+        break;
     case 'users':
         $users = 'active';
         break;
@@ -18,7 +21,7 @@ switch($tab){
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a href="/users/dashboard" class="logo brand"></a>
+            <a href="/users/dashboard" class="logo brand <?php echo $dashboard; ?>"></a>
             <div id="main-menu" class="nav-collapse collapse">
 
 <?php if(!empty($loggedInUserId)){ ?>
