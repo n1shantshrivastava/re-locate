@@ -1,3 +1,12 @@
+h1 {
+    padding: 0 0 10px 10px;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0px 8px 11px -4px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    color: #1ABC9C;
+    margin-bottom: 30px;
+}
+
 .logo {
     /*height: 15px;*/
     width: 110px;
@@ -21,9 +30,11 @@
 .padding-right5 {
     padding-right: 5px;;
 }
+
 .padding-right10 {
     padding-right: 10px;;
 }
+
 .padding-right20 {
     padding-right: 20px;;
 }
@@ -31,45 +42,93 @@
 .padding-left5 {
     padding-left: 5px;;
 }
+
 .padding-left10 {
     padding-right: 10px;;
 }
+
 .padding-left20 {
     padding-right: 20px;;
 }
+
 .form-buttons a {
     float: left;
     margin-right: 20px;
 }
+
 .navbar .brand {
     margin-left: 0;
 }
+
 .content-box {
     float: right;
     width: 610px;
     margin-right: 20px;
 }
+
 .mainCircleContainer {
     float: left;
 }
+
 .mainContentWrapper {
     margin-bottom: 50px;
 
 }
+
 #objectBox, #circleBox {
     min-height: 150px;
 }
-.error{
+
+.error {
     color: red;
     padding-top: 5px;
     padding-bottom: 5px
 }
-.success{
+
+.success {
     color: green;
     padding-top: 5px;
     padding-bottom: 5px
 }
+
 .mainContentWrapper .error, .mainContentWrapper .success {
     margin-left: 196px;
     display: block;
+}
+
+#chartdiv, #chartsiv {
+    height: 500px;
+    font-size: 11px;
+    border: 1px solid #1ABC9C;
+    box-shadow: 0px 8px 11px -4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+tspan {
+    width: 100px !important;
+}
+
+.page-header > a {
+    display: block;
+    background: #f4f4f4;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    text-transform: uppercase;
+    border: 1px solid #1ABC9C;
+    padding-left: 20px;
+}
+
+.page-header > a i {
+    background: url("../img/next-arrow.png") no-repeat center;
+    width: 32px;
+    height: 40px;
+    float: right;
+    margin-right: 15px;
+}
+
+.page-header > a:hover {
+    background: #1AbC9C;
+    text-decoration: none;
+    color: #ffffff;
 }
