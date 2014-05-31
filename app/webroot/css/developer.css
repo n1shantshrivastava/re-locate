@@ -132,3 +132,7 @@ tspan {
     text-decoration: none;
     color: #ffffff;
 }
+
+.ValidationErrors {
+    color: red;
+}
