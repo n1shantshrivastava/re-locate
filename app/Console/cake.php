@@ -1,4 +1,4 @@
-#!/usr/bin/php -q
+#!/usr/local/php5/bin:$PATH
 <?php
 /**
  * Command-line code generation utility to automate programmer chores.

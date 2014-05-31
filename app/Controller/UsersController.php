@@ -63,6 +63,26 @@ class UsersController extends AppController {
     public function dashboard() {
         $this->User->recursive = 0;
         $projects = $this->User->ProjectsUser->Project->getActiveProjects();
+
+        $teams= $this->User->Technology->getTechnologyUserCount();
+        $projects = $this->User->ProjectsUser->Project->getProjectUserCount();
+        $projects = array_values($projects);
+        foreach($projects as $key => $project){
+            unset($project['id']);
+            $projects[$key]= $project['Project'];
+        }
+        $projects = json_encode($projects);
+        foreach($teams as $key => $team) {
+            unset($team['id']);
+            $teams[$key] = $team['Technology'];
+        }
+        $teams = json_encode($teams);
+        $this->set(compact('projects','teams'));
+    }
+
+
+    public function user_dashboard() {
+        $this->autoRender = false;
         $tab = 'dashboard';
         $this->set(compact('projects','tab'));
     }

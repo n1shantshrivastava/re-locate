@@ -1,7 +1,7 @@
 <div class="container">
     <section id="forms">
-        <input type="hidden" name="project_id" id="projectId" value="<?php echo h($project['Project']['id']); ?>"/>
 
+        <input type="hidden" name="project_id" id="projectId" value="<?php echo h($project['Project']['id']); ?>"/>
         <div class="row">
             <div class="span11">
                 <div class="form-horizontal well control-group">

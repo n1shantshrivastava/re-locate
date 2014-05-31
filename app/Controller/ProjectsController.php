@@ -53,6 +53,7 @@ class ProjectsController extends AppController {
         $this->set('projects', $this->paginate());
     }
 
+
     /**
      * view method
      *
