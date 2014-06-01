@@ -278,4 +278,4 @@ Cache::config('_cake_model_', array(
 ));
 
 Configure::write('APPLICATION_NAME','re-Locate');
-Configure::write('base_url','http://webonise.relocate.com');
+Configure::write('base_url','http://relocate.com');

@@ -102,6 +102,7 @@ class Project extends AppModel {
 //        $this->ProjectResourceRequirement->Technology->bindModel(array('hasMany'=>array('User')));
         $this->ProjectTechnology->unbindModel(array('belongsTo'=>array('Project')));
         $this->ProjectsUser->unbindModel(array('belongsTo'=>array('Project')));
+        //$this->ProjectTechnology->belongsTo['Technology']['conditions'] = array('');
         $projectData =  $this->read(null, $id);
         if(!empty($projectData)){
             $userIds = array();
