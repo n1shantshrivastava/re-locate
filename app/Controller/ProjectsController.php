@@ -213,15 +213,21 @@ class ProjectsController extends AppController {
     }
 
     public function get_project_details() {
-        $technologiesWiseData = $this->Project->ProjectTechnology->Technology->getProjectAllocationStats($this->request->query['project_id']);
+        $this->autoRender = false;
+        $this->layout= false;
+        $technologyData = $this->Project->ProjectTechnology->Technology->getProjectAllocationStats($this->request->query['project_id']);
         if(!empty($technologiesWiseData)){
-            $data = array('status'=>'0');
+
+/*
             $chartData = $this->getFormattedData($technologiesWiseData);
-            $data['chartData'] = $chartData;
-            echo $chartData;
+
+            echo $chartData;*/
         }else {
-            echo json_encode(array('status'=>'0'));
+           /* echo json_encode(array('status'=>'0'));*/
         }
+        $technologyData = $this->getFormattedData($technologyData);
+        $this->set(compact('technologyData'));
+        echo $this->render('/Elements/project_stats_chart');
         die;
     }
 
@@ -231,7 +237,12 @@ class ProjectsController extends AppController {
             unset($technology['id']);
             $technologies[$key]= $technology['Technology'];
         }
-        $technologies = json_encode($technologies);
+        if(!empty($technologies)) {
+            $technologies = json_encode($technologies);
+        }else{
+            $technologies = json_encode(array());
+        }
+
 
         return $technologies;
     }

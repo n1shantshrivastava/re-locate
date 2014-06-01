@@ -16,37 +16,16 @@
 <?php //$cnt = 0;
         //foreach ($projects as $project): ?>
 
-    <div id="project<?php echo $cnt++ ?>" class="tabs-content">
+    <div id="projectChart" class="tabs-content">
 
-        <div id="projectName" class="pieCharts"></div>
+        <?php echo $this->element('project_stats_chart');?>
 
     </div>
             <?php //endforeach; ?>
     </div>
 
     <script type="text/javascript">
-    var chart = AmCharts.makeChart("projectName", {
-        "type": "pie",
-        "theme": "none",
-        "useMarkerColorForLabels": true,
-        "dataProvider": <?php echo $technologyData; ?>,
-        "legend": {
-            "markerType": "circle",
-            "position": "bottom",
-            "autoMargins": false
-        },
-        "valueField": "employee_count",
-        "titleField": "stream_name",
-        "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
-        "exportConfig": {
-            "menuTop":"0px",
-            "menuItems": [{
-                "icon": '/lib/3/images/export.png',
-                "format": 'png'
-            }]
-        }
 
-    });
     var firstContent = $(".tabs li:first-child a").attr("href");
     $(firstContent).show()
     $(".tabs li a").click(function( event ){
@@ -59,14 +38,17 @@
             type: "GET",
             url:"/projects/get_project_details",
             data:{'project_id':projectId},
-            dataType:'json',
+            dataType:'html',
             success:function (result) {
-                if(result.status !=0){
-                    chart.categoryField = "title";
-                    chart.dataProvider = result.chartData;
-                    chart.write('projectName');
+               $('#projectChart').html(result);
+                    /*chart.categoryField = "title";
+                    chart.valueField = 'employee_count';
+                    chart.titleField = 'stream_name';
 
-                }
+                    chart.dataProvider = result.chartData;
+                    chart.validateData();*/
+
+
             }
         });
     });

@@ -91,7 +91,7 @@ class Technology extends AppModel {
                     'alias' => 'ProjectResourceRequirement',
                     'type' => 'RIGHT',
                     'conditions' => array(
-                        'Technology.id = ProjectResourceRequirement.project_id'
+                        'Technology.id = ProjectResourceRequirement.technology_id'
                     )
                 ),
                 array(

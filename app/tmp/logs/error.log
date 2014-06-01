@@ -1,0 +1,52 @@
+2014-06-01 01:30:26 Error: 
+2014-06-01 01:30:29 Error: 
+2014-06-01 02:08:51 Error: [MissingViewException] View file "/home/webonise/projects/php/app2014/re-locate/app/View/Projects/Elements/project_stats_chart.ctp" is missing.
+#0 /home/webonise/projects/php/app2014/re-locate/lib/Cake/View/View.php(460): View->_getViewFileName('Elements/projec...')
+#1 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(959): View->render('Elements/projec...', NULL)
+#2 /home/webonise/projects/php/app2014/re-locate/app/Controller/ProjectsController.php(227): Controller->render('Elements/projec...')
+#3 [internal function]: ProjectsController->get_project_details()
+#4 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#5 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#7 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-06-01 02:09:10 Error: [MissingViewException] View file "/home/webonise/projects/php/app2014/re-locate/app/View/Projects/Elements/project_stats_chart.ctp" is missing.
+#0 /home/webonise/projects/php/app2014/re-locate/lib/Cake/View/View.php(460): View->_getViewFileName('Elements/projec...')
+#1 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(959): View->render('Elements/projec...', NULL)
+#2 /home/webonise/projects/php/app2014/re-locate/app/Controller/ProjectsController.php(227): Controller->render('Elements/projec...')
+#3 [internal function]: ProjectsController->get_project_details()
+#4 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#5 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#7 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-06-01 02:10:05 Error: [MissingViewException] View file "/home/webonise/projects/php/app2014/re-locate/app/View/Projects/Elements/project_stats_chart.ctp" is missing.
+#0 /home/webonise/projects/php/app2014/re-locate/lib/Cake/View/View.php(460): View->_getViewFileName('Elements/projec...')
+#1 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(959): View->render('Elements/projec...', NULL)
+#2 /home/webonise/projects/php/app2014/re-locate/app/Controller/ProjectsController.php(228): Controller->render('Elements/projec...')
+#3 [internal function]: ProjectsController->get_project_details()
+#4 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#5 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#7 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-06-01 02:11:03 Error: [MissingViewException] View file "/home/webonise/projects/php/app2014/re-locate/app/View/Projects/Elements/project_stats_chart.ctp" is missing.
+#0 /home/webonise/projects/php/app2014/re-locate/lib/Cake/View/View.php(460): View->_getViewFileName('Elements/projec...')
+#1 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(959): View->render('Elements/projec...', NULL)
+#2 /home/webonise/projects/php/app2014/re-locate/app/Controller/ProjectsController.php(228): Controller->render('Elements/projec...')
+#3 [internal function]: ProjectsController->get_project_details()
+#4 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#5 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#7 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-06-01 02:13:21 Error: [MissingViewException] View file "/home/webonise/projects/php/app2014/re-locate/app/View/Projects/Elements/project_stats_chart.ctp" is missing.
+#0 /home/webonise/projects/php/app2014/re-locate/lib/Cake/View/View.php(460): View->_getViewFileName('Elements/projec...')
+#1 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(959): View->render('Elements/projec...', NULL)
+#2 /home/webonise/projects/php/app2014/re-locate/app/Controller/ProjectsController.php(228): Controller->render('Elements/projec...')
+#3 [internal function]: ProjectsController->get_project_details()
+#4 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#5 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#7 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
