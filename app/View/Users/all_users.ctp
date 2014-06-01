@@ -1,9 +1,11 @@
 <div class="row">
-    <div class="pull-right">
-            <?php echo $this->Html->link(__('New User'), array('action' => 'add'),array('class'=>'btn btn-primary')); ?>
-    </div>
+
     <div class="users index">
-        <h2><?php echo __('Users / Resources');?></h2>
+        <h2><?php echo __('Users / Resources');?>
+            <div class="pull-right">
+                <?php echo $this->Html->link(__('New User'), array('action' => 'add'),array('class'=>'btn btn-primary')); ?>
+            </div>
+        </h2>
         <table class="table table-bordered table-striped table-hover">
             <tr>
                 <th><?php echo $this->Paginator->sort('employee_id', 'Employee Id');?></th>

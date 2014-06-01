@@ -201,4 +201,8 @@ class ProjectsController extends AppController {
         }
         return json_encode($respoceArray);
     }
+
+    public function project_stats(){
+
+    }
 }
