@@ -4,14 +4,12 @@ echo $this->Html->script(array('validations', 'projects/project-add'), false);
 <div class="projects form">
     <section id="forms">
         <div class="page-header">
-            <h1>Edit Project</h1>
+            <h3>Edit Project  <a href="javascript:window.history.back();" class="pull-right backButton"></a></h3>
         </div>
 
-        <div class="row">
-            <div class="span10 offset1">
                 <?php
                 echo $this->Form->create('Project', array(
-                    'class' => "form-horizontal well",
+                    'class' => "form-horizontal",
                     'inputDefaults' => array('label' => false, 'div' => false)
                 ));
                 echo $this->Form->hidden('Project.id' , array('value' => $project_id));
@@ -156,7 +154,5 @@ echo $this->Html->script(array('validations', 'projects/project-add'), false);
                     <a href="/projects/all_projects" class="btn">Cancel</a>
                 </div>
                 <?php echo $this->Form->end(); ?>
-            </div>
-        </div>
     </section>
 </div>

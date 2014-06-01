@@ -5,7 +5,7 @@ echo $this->Html->script(array('validations'), false);
 <div class="users form">
     <section id="forms">
         <div class="page-header">
-            <h1>Create User</h1>
+            <h3>Edit User  <a href="javascript:window.history.back();" class="pull-right backButton"></a></h3>
         </div>
 
         <div class="row">

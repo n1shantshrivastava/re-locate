@@ -2,9 +2,11 @@
 
     <div class="projects index">
         <h2><?php echo __('Projects');?>
-            <div class="pull-right">
+            <a href="javascript:window.history.back();" class="pull-right backButton"></a>
+            <div class="pull-right" style="margin-right: 10px;">
                 <?php echo $this->Html->link(__('New Project'), array('action' => 'add'),array('class'=>'btn btn-primary')); ?>
             </div>
+
         </h2>
         <table class="table table-bordered table-striped table-hover">
             <tr>

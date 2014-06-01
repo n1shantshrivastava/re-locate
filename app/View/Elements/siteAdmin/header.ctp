@@ -1,6 +1,6 @@
 <?php
 if (!isset($tab) || $tab == '') {
-    $tab = 'users';
+    $tab = '';
 }
 
 $dashboard = $users = $projects = '';
@@ -29,14 +29,14 @@ switch($tab){
                     <?php
                     echo $this->Html->tag(
                         'li',
-                        $this->Html->link(__('Users'),
+                        $this->Html->link(__('Manage Teams'),
                             array('controller'=>'users','action'=>'all_users'),
                             array('escape' => false)
                         ), array('escape' => false, 'class' => $users)
                     );
                     echo $this->Html->tag(
                         'li',
-                        $this->Html->link(__('Projects'),
+                        $this->Html->link(__('Manage Projects'),
                             array('controller'=>'projects','action'=>'all_projects'),
                             array('escape' => false)
                         ), array('escape' => false, 'class' => $projects)
@@ -44,6 +44,7 @@ switch($tab){
                     ?>
                 </ul>
                     <?php } ?>
+                <?php if(!empty($loggedInUserFirstName)) {?>
                 <ul id="main-menu-right" class="nav pull-right">
                     <li id="preview-menu" class="dropdown">
                         <a href="javascript:void(0)" data-toggle="dropdown" class="dropdown-toggle">Hello <?php echo $loggedInUserFirstName . ' ' . $loggedInUserLastName; ?> <b class="caret"></b></a>
@@ -60,6 +61,7 @@ switch($tab){
                         </ul>
                     </li>
                 </ul>
+                <?php } ?>
             </div>
         </div>
     </div>

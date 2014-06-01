@@ -2,6 +2,9 @@
     <!-- Forms
    ================================================== -->
     <section id="forms">
+        <div class="page-header">
+            <h3><?php echo h($project['Project']['project_name']); ?>  <a href="javascript:window.history.back();" class="pull-right backButton"></a></h3>
+        </div>
         <input type="hidden" name="project_id" id="projectId" value="<?php echo h($project['Project']['id']); ?>"/>
         <div class="row">
             <div class="span11">

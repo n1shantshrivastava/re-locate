@@ -2,7 +2,8 @@
 
     <div class="users index">
         <h2><?php echo __('Users / Resources');?>
-            <div class="pull-right">
+            <a href="javascript:window.history.back();" class="pull-right backButton"></a>
+            <div class="pull-right" style="margin-right: 10px;">
                 <?php echo $this->Html->link(__('New User'), array('action' => 'add'),array('class'=>'btn btn-primary')); ?>
             </div>
         </h2>

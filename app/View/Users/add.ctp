@@ -2,10 +2,10 @@
 echo $this->Html->script(array('validations'), false);
 ?>
 
-<div class="users form">
+<div class="users form" xmlns="http://www.w3.org/1999/html">
     <section id="forms">
         <div class="page-header">
-            <h1>Create User</h1>
+            <h3>Create User <a href="javascript:window.history.back();" class="pull-right backButton"></a></h3>
         </div>
 
         <div class="row">

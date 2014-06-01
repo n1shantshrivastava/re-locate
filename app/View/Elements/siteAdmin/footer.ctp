@@ -1,7 +1,5 @@
-<footer>
-    <div class="pull-right">
+<footer class="clearfix">
         <p>
-            &copy; <?php echo $appName; echo date('Y'); ?>
+            &copy; Weboniselab<?php echo date('Y'); ?>
         </p>
-    </div>
 </footer>

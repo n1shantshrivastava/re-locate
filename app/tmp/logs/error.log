@@ -50,3 +50,13 @@
 #6 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
 #7 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #8 {main}
+2014-06-01 02:27:52 Error: 
+2014-06-01 03:23:20 Error: 
+2014-06-01 03:32:52 Error: [MissingActionException] Action ProjectsController::window.history.back()() could not be found.
+#0 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-06-01 03:40:53 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

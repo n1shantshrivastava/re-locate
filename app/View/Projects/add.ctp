@@ -4,7 +4,7 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
 <div class="projects form">
     <section id="forms">
         <div class="page-header">
-            <h1>Create Project</h1>
+            <h3>Create Project <a href="javascript:window.history.back();" class="pull-right backButton"></a></h3>
         </div>
 
         <div class="row">
