@@ -203,6 +203,36 @@ class ProjectsController extends AppController {
     }
 
     public function project_stats(){
+        $projects = $this->Project->getActiveProjects();
+        $firstProject = $projects[0];
 
+        $technologiesWiseData = $this->Project->ProjectTechnology->Technology->getProjectAllocationStats($firstProject['Project']['id']);
+        $technologyData =  $this->getFormattedData($technologiesWiseData);
+
+        $this->set(compact('projects','technologyData'));
+    }
+
+    public function get_project_details() {
+        $technologiesWiseData = $this->Project->ProjectTechnology->Technology->getProjectAllocationStats($this->request->query['project_id']);
+        if(!empty($technologiesWiseData)){
+            $data = array('status'=>'0');
+            $chartData = $this->getFormattedData($technologiesWiseData);
+            $data['chartData'] = $chartData;
+            echo $chartData;
+        }else {
+            echo json_encode(array('status'=>'0'));
+        }
+        die;
+    }
+
+    private function getFormattedData($technologiesWiseData){
+        $technologiesWiseData = array_values($technologiesWiseData);
+        foreach($technologiesWiseData as $key => $technology){
+            unset($technology['id']);
+            $technologies[$key]= $technology['Technology'];
+        }
+        $technologies = json_encode($technologies);
+
+        return $technologies;
     }
 }
