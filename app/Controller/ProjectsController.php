@@ -95,6 +95,7 @@ class ProjectsController extends AppController {
                 $technologyAlloted = array_unique($technologyAlloted);
 
                 foreach ($technologyAlloted as $alloted) {
+                    $this->Project->ProjectTechnology->create();
                     if ($this->Project->ProjectTechnology->save(array('project_id' => $projectId, 'technology_id' => $alloted))) {
                         $this->log('>>>> SUCCESS | ProjectTechnology Saved for ProjectId : ' . $projectId . "Technology Id : " . $alloted);
                     } else {
@@ -133,8 +134,26 @@ class ProjectsController extends AppController {
             $this->request->data['Project']['start_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['start_date']));
             $this->request->data['Project']['end_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['end_date']));
 
-            $projectResourceRequirement = $this->request->data['ProjectResourceRequirements'];
             if ($this->Project->saveAll($this->request->data)) {
+
+                $projectResourceRequirement = $this->request->data['ProjectResourceRequirements'];
+                foreach ($projectResourceRequirement as $key => $value) {
+
+                    $technologyAlloted[] = $value['technology_id'];
+                }
+                $projectId=  $this->request->data['Project']['id'];
+                $technologyAlloted = array_unique($technologyAlloted);
+                if(!empty($technologyAlloted)){
+                    $this->Project->ProjectTechnology->deleteAll(array('ProjectTechnology.project_id'=>$projectId));
+                    foreach ($technologyAlloted as $alloted) {
+                        $this->Project->ProjectTechnology->create();
+                        if ($this->Project->ProjectTechnology->save(array('project_id' => $projectId, 'technology_id' => $alloted))) {
+                            $this->log('>>>> SUCCESS | ProjectTechnology Saved for ProjectId : ' . $projectId . "Technology Id : " . $alloted);
+                        } else {
+                            $this->log('>>>> FAILED | ProjectTechnology could not be Saved for ProjectId : ' . $projectId . "Technology Id : " . $alloted);
+                        }
+                    }
+                }
                 if ($this->Project->ProjectResourceRequirement->saveAll($projectResourceRequirement)) {
                     $this->log('>>>> SUCCESS | ProjectResourceRequirement data saved');
                 } else {
@@ -187,7 +206,6 @@ class ProjectsController extends AppController {
     public function add_project_resource() {
 
         $this->autoRender = false;
-        $respoceArray = array();
         if (!empty($this->request->data) && $this->request->data['user_id'] != "" && $this->request->data['project_id']) {
             $saveProjectUser = $this->Project->saveProjectUser($this->request->data);
             if ($saveProjectUser) {
