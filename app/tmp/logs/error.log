@@ -1,100 +1,66 @@
-2013-08-03 09:57:24 Error: [MissingActionException] Action ProjectsController::create() could not be found.
-#0 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
-#1 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
-#2 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+2014-06-01 01:30:26 Error: 
+2014-06-01 01:30:29 Error: 
+2014-06-01 02:08:51 Error: [MissingViewException] View file "/home/webonise/projects/php/app2014/re-locate/app/View/Projects/Elements/project_stats_chart.ctp" is missing.
+#0 /home/webonise/projects/php/app2014/re-locate/lib/Cake/View/View.php(460): View->_getViewFileName('Elements/projec...')
+#1 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(959): View->render('Elements/projec...', NULL)
+#2 /home/webonise/projects/php/app2014/re-locate/app/Controller/ProjectsController.php(227): Controller->render('Elements/projec...')
+#3 [internal function]: ProjectsController->get_project_details()
+#4 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#5 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#7 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-06-01 02:09:10 Error: [MissingViewException] View file "/home/webonise/projects/php/app2014/re-locate/app/View/Projects/Elements/project_stats_chart.ctp" is missing.
+#0 /home/webonise/projects/php/app2014/re-locate/lib/Cake/View/View.php(460): View->_getViewFileName('Elements/projec...')
+#1 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(959): View->render('Elements/projec...', NULL)
+#2 /home/webonise/projects/php/app2014/re-locate/app/Controller/ProjectsController.php(227): Controller->render('Elements/projec...')
+#3 [internal function]: ProjectsController->get_project_details()
+#4 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#5 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#7 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-06-01 02:10:05 Error: [MissingViewException] View file "/home/webonise/projects/php/app2014/re-locate/app/View/Projects/Elements/project_stats_chart.ctp" is missing.
+#0 /home/webonise/projects/php/app2014/re-locate/lib/Cake/View/View.php(460): View->_getViewFileName('Elements/projec...')
+#1 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(959): View->render('Elements/projec...', NULL)
+#2 /home/webonise/projects/php/app2014/re-locate/app/Controller/ProjectsController.php(228): Controller->render('Elements/projec...')
+#3 [internal function]: ProjectsController->get_project_details()
+#4 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#5 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#7 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-06-01 02:11:03 Error: [MissingViewException] View file "/home/webonise/projects/php/app2014/re-locate/app/View/Projects/Elements/project_stats_chart.ctp" is missing.
+#0 /home/webonise/projects/php/app2014/re-locate/lib/Cake/View/View.php(460): View->_getViewFileName('Elements/projec...')
+#1 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(959): View->render('Elements/projec...', NULL)
+#2 /home/webonise/projects/php/app2014/re-locate/app/Controller/ProjectsController.php(228): Controller->render('Elements/projec...')
+#3 [internal function]: ProjectsController->get_project_details()
+#4 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#5 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#7 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-06-01 02:13:21 Error: [MissingViewException] View file "/home/webonise/projects/php/app2014/re-locate/app/View/Projects/Elements/project_stats_chart.ctp" is missing.
+#0 /home/webonise/projects/php/app2014/re-locate/lib/Cake/View/View.php(460): View->_getViewFileName('Elements/projec...')
+#1 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(959): View->render('Elements/projec...', NULL)
+#2 /home/webonise/projects/php/app2014/re-locate/app/Controller/ProjectsController.php(228): Controller->render('Elements/projec...')
+#3 [internal function]: ProjectsController->get_project_details()
+#4 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
+#5 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#7 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-06-01 02:27:52 Error: 
+2014-06-01 03:23:20 Error: 
+2014-06-01 03:32:52 Error: [MissingActionException] Action ProjectsController::window.history.back()() could not be found.
+#0 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /home/webonise/projects/php/app2014/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
+#2 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
-2013-08-03 11:04:05 Error: [MissingTableException] Table project_users for model ProjectUser was not found in datasource default.
-#0 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Model/Model.php(3408): Model->setSource('project_users')
-#1 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Model/Datasource/DboSource.php(1044): Model->getDataSource()
-#2 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Model/Model.php(2663): DboSource->read(Object(Project), Array)
-#3 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Model/Model.php(1491): Model->find('first', Array)
-#4 /home/webonise/Projects/PHP/Apps2013/re-locate/app/Controller/ProjectsController.php(44): Model->read(NULL, '1')
-#5 [internal function]: ProjectsController->view('1')
-#6 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
-#7 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
-#8 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
-#9 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#10 {main}
-2013-08-03 11:46:04 Error: [NotFoundException] Invalid project
-#0 [internal function]: ProjectsController->view('js', 'circleview', 'jquery.qtip-1.0...')
-#1 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
-#2 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
-#3 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
-#4 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#5 {main}
-2013-08-03 11:47:19 Error: [NotFoundException] Invalid project
-#0 [internal function]: ProjectsController->view('js', 'circleview', 'jquery.qtip-1.0...')
-#1 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
-#2 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
-#3 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
-#4 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#5 {main}
-2013-08-03 11:50:07 Error: [NotFoundException] Invalid project
-#0 [internal function]: ProjectsController->view('js', 'circleview', 'jquery.qtip-1.0...')
-#1 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
-#2 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
-#3 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
-#4 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#5 {main}
-2013-08-03 11:52:22 Error: [NotFoundException] Invalid project
-#0 [internal function]: ProjectsController->view('js', 'circleview', 'jquery.qtip-1.0...')
-#1 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
-#2 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
-#3 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
-#4 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#5 {main}
-2013-08-03 11:54:48 Error: [NotFoundException] Invalid project
-#0 [internal function]: ProjectsController->view('js', 'circleview', 'jquery.qtip-1.0...')
-#1 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
-#2 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
-#3 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
-#4 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#5 {main}
-2013-08-03 11:56:15 Error: [NotFoundException] Invalid project
-#0 [internal function]: ProjectsController->view('js', 'circleview', 'jquery.qtip-1.0...')
-#1 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
-#2 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
-#3 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
-#4 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#5 {main}
-2013-08-03 11:57:13 Error: [NotFoundException] Invalid project
-#0 [internal function]: ProjectsController->view('js', 'circleview', 'jquery.qtip-1.0...')
-#1 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
-#2 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
-#3 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
-#4 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#5 {main}
-2013-08-03 11:57:43 Error: [NotFoundException] Invalid project
-#0 [internal function]: ProjectsController->view('js', 'circleview', 'jquery.qtip-1.0...')
-#1 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
-#2 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
-#3 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
-#4 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#5 {main}
-2013-08-03 11:58:16 Error: [NotFoundException] Invalid project
-#0 [internal function]: ProjectsController->view('js', 'circleview', 'jquery.qtip-1.0...')
-#1 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
-#2 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
-#3 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
-#4 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#5 {main}
-2013-08-03 11:58:47 Error: [NotFoundException] Invalid project
-#0 [internal function]: ProjectsController->view('js', 'circleview', 'jquery.qtip-1.0...')
-#1 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
-#2 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
-#3 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
-#4 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#5 {main}
-2013-08-03 11:58:47 Error: [NotFoundException] Invalid project
-#0 [internal function]: ProjectsController->view('js', 'circleview', 'js', 'circleview', 'jquery.qtip-1.0...')
-#1 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Controller/Controller.php(485): ReflectionMethod->invokeArgs(Object(ProjectsController), Array)
-#2 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
-#3 /home/webonise/Projects/PHP/Apps2013/re-locate/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProjectsController), Object(CakeRequest), Object(CakeResponse))
-#4 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
-#5 {main}
-2013-08-03 11:59:09 Error: [MissingControllerException] Controller class CircleviewController could not be found.
-#0 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+2014-06-01 03:40:53 Error: [MissingControllerException] Controller class JsController could not be found.
+#0 /home/webonise/projects/php/app2014/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+<<<<<<< HEAD
 2013-08-03 11:59:09 Error: [MissingControllerException] Controller class CircleviewController could not be found.
 #0 /home/webonise/Projects/PHP/Apps2013/re-locate/app/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
@@ -4430,3 +4396,5 @@
 )
 
 2014-01-27 08:21:19 Error: >>>> SUCCESS | ProjectResourceRequirement data saved
+=======
+>>>>>>> df72fb085f7af8a1206f1f63b3881aa79c5f1aef

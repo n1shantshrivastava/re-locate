@@ -1,5 +1,8 @@
-<div class="span4"></div>
-<div class="span4">
+<?php
+/**
+ * @var view $this
+ */
+?>
     <div class="hero-unit">
         <?php
         echo $this->Form->create('User' , array('url' => array('plugin' => false , 'controller' => 'users' , 'action' => ''))); ?>
@@ -11,7 +14,6 @@
             echo $this->Form->input('password', array('id' => 'password'));
             ?>
         </fieldset>
-        <?php echo $this->Form->end(__('Submit')); ?>
+        <?php echo $this->Form->submit(__('Submit'), array('class'=>'btn btn-primary    ')); ?>
+        <?php echo $this->Form->end(); ?>
     </div>
-</div>
-<div class="span4"></div>

@@ -51,4 +51,73 @@ class Technology extends AppModel {
         ));
     }
 
+    public function getTechnologyUserCount() {
+        $this->virtualFields['employee_count'] = 'count(User.id)';
+
+        $result = $this->find('all',array(
+            'fields' => array(
+                'Technology.id','Technology.stream_name','Technology.employee_count'
+            ),
+            'joins' => array(
+                array(
+                    'table' => 'users',
+                    'alias' => 'User',
+                    'type'  => 'LEFT',
+                    'conditions' =>array(
+                        'Technology.id = User.technology_id'
+                    )
+                )
+            ),
+            'group'=> array(
+                'Technology.id'
+            ),
+            'recursive' => -1
+        ));
+        return $result;
+    }
+
+    public function getProjectAllocationStats($projectId){
+        $this->virtualFields['employee_count'] = 'COUNT(User.id)';
+        $result = $this->find('all', array(
+            'fields'=>array(
+                'Technology.id',
+                'Technology.stream_name',
+                'Technology.employee_count'
+            ),
+            'joins'=>array(
+
+                array(
+                    'table' => 'project_resource_requirement',
+                    'alias' => 'ProjectResourceRequirement',
+                    'type' => 'RIGHT',
+                    'conditions' => array(
+                        'Technology.id = ProjectResourceRequirement.technology_id'
+                    )
+                ),
+                array(
+                    'table' => 'users',
+                    'alias' => 'User',
+                    'type' => 'LEFT',
+                    'conditions' => array(
+                        'Technology.id = User.technology_id',
+                    )
+                ),
+                array(
+                    'table' => 'projects_users',
+                    'alias' => 'ProjectsUser',
+                    'type' => 'LEFT',
+                    'conditions' => array(
+                        'User.id = ProjectsUser.user_id',
+                    )
+                )
+
+            ),
+            'conditions'=>array(
+                'ProjectResourceRequirement.project_id'=>$projectId
+            ),
+            'group'=>array('Technology.id'),
+            'recursive' => -1
+        ));
+        return $result;
+    }
 }

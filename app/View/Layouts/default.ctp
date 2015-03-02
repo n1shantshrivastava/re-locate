@@ -32,7 +32,7 @@ $cakeDescription = __d('cake_dev', $appName);
     echo $this->fetch('css');
     echo $this->Html->script(array(
         'bootstrap', 'jquery.validate', 'jquery.validation.functions',
-        'jquery.ui.core', 'jquery.ui.datepicker',
+        'jquery.ui.core', 'jquery.ui.datepicker','amcharts.js','pie.js',
         'developer',
         'masonry/jquery.masonry.min',
         'masonry/jquery.masonry.corner.stamp',
@@ -45,6 +45,8 @@ $cakeDescription = __d('cake_dev', $appName);
     echo $this->fetch('script');
     ?>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
     <style type="text/css">
         body {

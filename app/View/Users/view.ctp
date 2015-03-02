@@ -2,12 +2,13 @@
     <!-- Forms
    ================================================== -->
     <section id="forms">
+        <h3><?php echo h($user['User']['first_name'] . ' ' . $user['User']['last_name']); ?>  <a href="javascript:window.history.back();" class="pull-right backButton"></a></h3>
         <input type="hidden" name="project_id" id="projectId" value="<?php echo h($user['User']['id']); ?>"/>
 
         <div class="row">
-            <div class="span10 offset1">
+            <div class="span10 offset1 viewUsers">
                 <div class="form-horizontal well">
-                    <legend><?php echo h($user['User']['first_name'] . ' ' . $user['User']['last_name']); ?></legend>
+                    <!--<legend><?php /*echo h($user['User']['first_name'] . ' ' . $user['User']['last_name']); */?></legend>-->
                     <table class="table table-striped table-hover">
                         <tr>
                             <td width="40%"><?php echo __('Employee Id'); ?></td>

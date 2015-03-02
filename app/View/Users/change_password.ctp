@@ -19,7 +19,6 @@ echo $this->Html->script(array('validations'), false);
                 ?>
                 <div class="form-actions">
                     <div class="page-header">
-                        <h3>Change Password</h3>
                     </div>
                     <div class="control-group info">
                         <label class="control-label" for="password">Enter current Password</label>

@@ -1,11 +1,14 @@
 <?php
 if (!isset($tab) || $tab == '') {
-    $tab = 'users';
+    $tab = '';
 }
 
-$users = $projects = '';
+$dashboard = $users = $projects = '';
 
 switch($tab){
+    case 'dashboard':
+        $dashboard = 'active';
+        break;
     case 'users':
         $users = 'active';
         break;
@@ -18,7 +21,7 @@ switch($tab){
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a href="/users/dashboard" class="logo brand"></a>
+            <a href="/users/dashboard" class="logo brand <?php echo $dashboard; ?>"></a>
             <div id="main-menu" class="nav-collapse collapse">
 
 <?php if(!empty($loggedInUserId)){ ?>
@@ -26,24 +29,29 @@ switch($tab){
                     <?php
                     echo $this->Html->tag(
                         'li',
-                        $this->Html->link(__('Users'),
+                        $this->Html->link(__('Manage Teams'),
                             array('controller'=>'users','action'=>'all_users'),
                             array('escape' => false)
                         ), array('escape' => false, 'class' => $users)
                     );
                     echo $this->Html->tag(
                         'li',
-                        $this->Html->link(__('Projects'),
+                        $this->Html->link(__('Manage Projects'),
                             array('controller'=>'projects','action'=>'all_projects'),
                             array('escape' => false)
                         ), array('escape' => false, 'class' => $projects)
                     );
                     ?>
                 </ul>
+<<<<<<< HEAD
                     <?php
             }
                 if($loggedInUserId) {
                 ?>
+=======
+                    <?php } ?>
+                <?php if(!empty($loggedInUserFirstName)) {?>
+>>>>>>> df72fb085f7af8a1206f1f63b3881aa79c5f1aef
                 <ul id="main-menu-right" class="nav pull-right">
                     <li id="preview-menu" class="dropdown">
                         <a href="javascript:void(0)" data-toggle="dropdown" class="dropdown-toggle">Hello <?php echo $loggedInUserFirstName . ' ' . $loggedInUserLastName; ?> <b class="caret"></b></a>
@@ -60,7 +68,11 @@ switch($tab){
                         </ul>
                     </li>
                 </ul>
+<<<<<<< HEAD
                     <?php } ?>
+=======
+                <?php } ?>
+>>>>>>> df72fb085f7af8a1206f1f63b3881aa79c5f1aef
             </div>
         </div>
     </div>

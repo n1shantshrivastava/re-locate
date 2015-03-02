@@ -2,40 +2,40 @@ $(document).ready(function () {
 
     $(function () {
 
-        $('.circleBox-quality-analyst').hide();
+        $('.circleBox-mobile').hide();
 
-        $('.objectBox-quality-analyst').masonry({
+        $('.objectBox-mobile').masonry({
             // options
-            itemSelector:'.draggableObjects-quality-analyst',
+            itemSelector:'.draggableObjects-mobile',
             columnWidth:10,
             cornerStampSelector:''
         });
 
-        $('.circleBox-quality-analyst').masonry({
+        $('.circleBox-mobile').masonry({
             // options
-            itemSelector:'.draggableObjects-quality-analyst',
+            itemSelector:'.draggableObjects-mobile',
             columnWidth:10,
             cornerStampSelector:'.corner-stamp'
         });
 
         //genericAdd("Object Title","Object Image URL","URL linked to Object");
 
-        displayObjectsFromDatabase('objectBox-quality-analyst');
+        displayObjectsFromDatabase('objectBox-mobile');
     });
 
     function displayObjectsFromDatabase(objectId) {
 //        console.log('displayObjects method called');
 
-        $.each(objectDatabasequalityanalyst, function (i, v) {
+        $.each(objectDatabasemobile, function (i, v) {
             genericAdd(objectId, v.title, v.image, v.url);
         });
     }
 
 
-    $("#show_all-quality-analyst").click(function (e) {
-        $('.circleBox-quality-analyst').hide();
-        $('.objectBox-quality-analyst').show();
-        displayObjectsFromDatabase('objectBox-quality-analyst');
+    $("#show_all-mobile").click(function (e) {
+        $('.circleBox-mobile').hide();
+        $('.objectBox-mobile').show();
+        displayObjectsFromDatabase('objectBox-mobile');
     });
 
 
@@ -64,7 +64,7 @@ $(document).ready(function () {
     }
 
     function attachObject(objectId, object_image_html, object_url_html, object_url) {
-        var $object = $('<div class="object draggableObjects draggableObjects-quality-analyst"  id="' + object_url + '" >' + object_image_html + object_url_html + '</div>');
+        var $object = $('<div class="object draggableObjects draggableObjects-mobile"  id="' + object_url + '" >' + object_image_html + object_url_html + '</div>');
         $('.' + objectId).prepend($object).masonry('reload');
         $object.draggable({
             cancel:"a.ui-icon",
@@ -77,7 +77,7 @@ $(document).ready(function () {
     }
 
 
-    $(".draggableObjects-quality-analyst").draggable({
+    $(".draggableObjects-mobile").draggable({
         drag:function (event, ui) {
             alert('dragstart');
         },
@@ -94,10 +94,10 @@ $(document).ready(function () {
         alert('hi');
     }
 
-    $(".draggableObjects-quality-analyst").bind('dragstart', onDragStart, false);
+    $(".draggableObjects-mobile").bind('dragstart', onDragStart, false);
 
-    $(".mainContainer-quality-analyst").droppable({
-        accept:".draggableObjects-quality-analyst",
+    $(".mainContainer-mobile").droppable({
+        accept:".draggableObjects-mobile",
         activeClass:"ui-state-highlight",
         drop:function (event, ui) {
 //            alert('dropable called')
@@ -113,12 +113,12 @@ $(document).ready(function () {
                 success:function (result) {
                     var resultDt = jQuery.parseJSON(result);
                     if(resultDt['status'] == 'success'){
-                        addCirclequalityanalyst(ui.draggable, thisobject.id);
-                        $("#errorDivquality-analyst").html();
-                        $("#errorDivquality-analyst").html('<span class="success">'+resultDt['message']+'</span>');
+                        addCircleandroid(ui.draggable, thisobject.id);
+                        $("#errorDivandroid").html();
+                        $("#errorDivandroid").html('<span class="success">'+resultDt['message']+'</span>');
                     }else{
-                        $("#errorDivquality-analyst").html();
-                        $("#errorDivquality-analyst").html('<span class="error">'+resultDt['message']+'</span>');
+                        $("#errorDivandroid").html();
+                        $("#errorDivandroid").html('<span class="error">'+resultDt['message']+'</span>');
                     }
 
                 }
@@ -128,15 +128,15 @@ $(document).ready(function () {
         }
     });
 
-    $(".mainContainer-quality-analyst").mouseover(function () {
+    $(".mainContainer-mobile").mouseover(function () {
         var containerId = this.id;
         TweenLite.to($("#b" + containerId), 0.2, {css:{width:150, height:150, marginLeft:-20, marginTop:-20}, ease:Power2.easeOut, onComplete:function () {
-            calculatePositionsqualityanalyst(containerId);
+            calculatePositionsandroid(containerId);
         }
         });
     });
 
-    $(".mainContainer-quality-analyst").mouseleave(function () {
+    $(".mainContainer-mobile").mouseleave(function () {
         var resultCircleClass = ".r" + this.id;
         var bigCircleId = "#b" + this.id;
 
@@ -145,23 +145,23 @@ $(document).ready(function () {
         TweenLite.to($(bigCircleId), 0.2, {css:{width:110, height:110, marginLeft:0, marginTop:0}, delay:0.2, overwrite:"all"});
     });
 
-    $(".smallCircle-quality-analyst").click(function () {
+    $(".smallCircle-mobile").click(function () {
         var object;
         var containerId = $(this).parent().attr("id");
         var bigCircleId = "#b" + containerId;
         var resultCircleClass = ".r" + containerId;
-        $('.objectBox-quality-analyst').hide();
-        $('.circleBox-quality-analyst').show();
+        $('.objectBox-mobile').hide();
+        $('.circleBox-mobile').show();
 
-        $('.circleBox-quality-analyst').masonry('remove', $('.draggableObjects-quality-analyst')).masonry('reload');
+        $('.circleBox-mobile').masonry('remove', $('.draggableObjects-mobile')).masonry('reload');
 
         $(bigCircleId).children(resultCircleClass).each(function () {
             var context = $(this);
-            object = $('<div class="object draggableObjects draggableObjects-quality-analyst" >' + context.html() + '</div>');
-            $('.circleBox-quality-analyst').append(object).masonry('appended', object);
+            object = $('<div class="object draggableObjects draggableObjects-mobile" >' + context.html() + '</div>');
+            $('.circleBox-mobile').append(object).masonry('appended', object);
         });
 
-        $('.draggableObjects-quality-analyst:not(.ui-draggable)').draggable({
+        $('.draggableObjects-mobile:not(.ui-draggable)').draggable({
             cancel:"a.ui-icon",
             revert:"invalid",
             containment:"document",
@@ -177,7 +177,7 @@ $(document).ready(function () {
      alert('bigCircle');
      });*/
 
-    $(".bigCircle-quality-analyst").on('click', '.resultCircle-quality-analyst', function () {
+    $(".bigCircle-mobile").on('click', '.resultCircle-mobile', function () {
         //$(this).parent().append("<div class='akash' >asdasdasdasd </div>");
 //        $("<div class='akash dn'> </div>").insertAfter(this);
         console.log($(this).css('top'));
@@ -200,16 +200,16 @@ $(document).ready(function () {
 
 });
 
-function addCirclequalityanalyst($item, containerId) {
+function addCircleandroid($item, containerId) {
 
     var resultCircleClass = "r" + containerId;
     console.log('addCircleCalled')
-    var div = $("<div class='resultCircle resultCircle-quality-analyst " + resultCircleClass + "' >" + $item.html() + "</div>");
+    var div = $("<div class='resultCircle resultCircle-mobile " + resultCircleClass + "' >" + $item.html() + "</div>");
     $('#b' + containerId).append(div);
-    calculatePositionsqualityanalyst(containerId);
+    calculatePositionsandroid(containerId);
 }
 
-function calculatePositionsqualityanalyst(containerId) {
+function calculatePositionsandroid(containerId) {
 
     var bigCircleId = "#b" + containerId;
     var resultCircleClass = ".r" + containerId;

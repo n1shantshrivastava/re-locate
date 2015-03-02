@@ -2,10 +2,10 @@
 echo $this->Html->script(array('validations'), false);
 ?>
 
-<div class="users form">
+<div class="users form" xmlns="http://www.w3.org/1999/html">
     <section id="forms">
         <div class="page-header">
-            <h1>Create User</h1>
+            <h3>Create User <a href="javascript:window.history.back();" class="pull-right backButton"></a></h3>
         </div>
 
         <div class="row">
@@ -23,7 +23,7 @@ echo $this->Html->script(array('validations'), false);
                         <label class="control-label" for="userName">Email Id</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('username');
+                            <?php echo $this->Form->input('username', array('placeholder'=>'Enter Email Id'));
                             echo $this->Html->image('indicator.gif', array('id' => 'busy-indicator'));
                             echo $this->Html->image('available.png', array('id' => 'available'));
                             echo $this->Html->image('unavailable.gif', array('id' => 'unavailable'));?>
@@ -33,28 +33,28 @@ echo $this->Html->script(array('validations'), false);
                         <label class="control-label" for="password">Password</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('password');?>
+                            <?php echo $this->Form->input('password',array('placeholder'=>'Enter Password'));?>
                         </div>
                     </div>
                     <div class="control-group info">
                         <label class="control-label" for="first_name">First Name</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('first_name');?>
+                            <?php echo $this->Form->input('first_name',array('placeholder'=>'Enter First Name'));?>
                         </div>
                     </div>
                     <div class="control-group info">
                         <label class="control-label" for="last_name">Last Name</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('last_name');?>
+                            <?php echo $this->Form->input('last_name', array('placeholder'=>'Enter Last Name'));?>
                         </div>
                     </div>
                     <div class="control-group info">
                         <label class="control-label" for="employee_id">Employee id</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('employee_id', array('type' => 'text'));?>
+                            <?php echo $this->Form->input('employee_id', array('type' => 'text','placeholder'=>'Enter Employee Id'));?>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@ echo $this->Html->script(array('validations'), false);
                         <label class="control-label" for="salary">Salary</label>
                         <div class="controls">
                             <?php
-                            echo $this->Form->input('salary');
+                            echo $this->Form->input('salary',array('placeholder'=>'Enter Annual Salary'));
                             ?>
                         </div>
                     </div>
@@ -85,7 +85,7 @@ echo $this->Html->script(array('validations'), false);
                         <label class="control-label" for="work_experience">Work Experience</label>
                         <div class="controls">
                             <?php
-                            echo $this->Form->input('work_experience');
+                            echo $this->Form->input('work_experience',array('placeholder'=>'Enter Total Work Experience'));
                             ?>
                         </div>
                     </div>

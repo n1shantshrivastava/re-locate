@@ -2,6 +2,9 @@
     <!-- Forms
    ================================================== -->
     <section id="forms">
+        <div class="page-header">
+            <h3><?php echo h($project['Project']['project_name']); ?>  <a href="javascript:window.history.back();" class="pull-right backButton"></a></h3>
+        </div>
         <input type="hidden" name="project_id" id="projectId" value="<?php echo h($project['Project']['id']); ?>"/>
         <div class="row">
             <div class="span11">
@@ -25,39 +28,48 @@
                                     <?php echo 'objectDatabase' . str_replace('-', '', $technology['Technology']['slug']) . '=' . $userTechnologiesEncode; ?>
                             </script>
                             <script
-                                src="<?php echo $base_url; ?>/js/circleview/<?php echo $technology['Technology']['slug'] . '.js'?>"></script>
+                                    src="<?php echo $base_url; ?>/js/circleview/<?php echo $technology['Technology']['slug'] . '.js'?>"></script>
                             <div class="mainContentWrapper">
                                 <div id="errorDiv<?php echo $technology['Technology']['slug']; ?>"></div>
                                 <div
-                                    class="mainCircleContainer mainContainer-<?php echo $technology['Technology']['slug'] ?>"
-                                    id="<?php echo $technology['Technology']['id'];?>" style="">
+                                        class="mainCircleContainer mainContainer-<?php echo $technology['Technology']['slug'] ?>"
+                                        id="<?php echo $technology['Technology']['id'];?>" style="">
                                     <!-- <div id="dragWindow"></div>-->
                                     <div id="s<?php echo $technology['Technology']['id'];?>"
                                          class="smallCircle smallCircle-<?php echo $technology['Technology']['slug']; ?>">
                                         <label
-                                            id="circleLabel"><?php echo $technology['Technology']['stream_name'];?></label>
+                                                id="circleLabel"><?php echo $technology['Technology']['stream_name'];?></label>
                                     </div>
                                     <div id="b<?php echo $technology['Technology']['id'];?>"
                                          class="bigCircle bigCircle-<?php echo $technology['Technology']['slug'] ?>">
                                         <?php
                                         if (isset($technology['ProjectsUser']) && !empty($technology['ProjectsUser'])) {
 
-                                                    foreach($technology['ProjectsUser'] as $userExistData){
-                                                        ?>
-                                                        <div
-                                                            class="resultCircle  <?php echo "resultCircle-" . $technology['Technology']['slug'] . " r" . $technology['Technology']['id']?>">
-                                                        <div class="object-img" style="background-image:url(<?php echo $imagePath; ?>)" id="<?php echo $userExistData['User']['id']; ?>"></div>
-                                                        <div class="data"><a href="<?php echo $userExistData['User']['id']; ?>" id="<?php echo $userExistData['User']['id']; ?>"><?php echo $userExistData['User']['first_name'].' '.$userExistData['User']['last_name']; ?></a></div>
-                                                        </div>
-                                                        <?php
-                                                    }
+                                            foreach($technology['ProjectsUser'] as $userExistData){
                                                 ?>
+<<<<<<< HEAD
                                                 <script type="text/javascript" >
                                                     TweenLite.to($("#b<?php echo $technology['Technology']['id']; ?>"), 0.2, {css:{width:150, height:150, marginLeft:-20, marginTop:-20}, ease:Power2.easeOut, onComplete:function () {
                                                         calculatePositionsphp(<?php echo $technology['Technology']['id']; ?>);
                                                     }
                                                     });
                                                 </script>
+=======
+                                                <div
+                                                        class="resultCircle  <?php echo "resultCircle-" . $technology['Technology']['slug'] . " r" . $technology['Technology']['id']?>">
+                                                    <div class="object-img" style="background-image:url(<?php echo $imagePath; ?>)" id="<?php echo $userExistData['User']['id']; ?>"></div>
+                                                    <div class="data"><a href="<?php echo $userExistData['User']['id']; ?>" id="<?php echo $userExistData['User']['id']; ?>"><?php echo $userExistData['User']['first_name'].' '.$userExistData['User']['last_name']; ?></a></div>
+                                                </div>
+                                                <?php
+                                            }
+                                            ?>
+                                            <script type="text/javascript" >
+                                                TweenLite.to($("#b"<?php echo $technology['Technology']['id']; ?>), 0.2, {css:{width:150, height:150, marginLeft:-20, marginTop:-20}, ease:Power2.easeOut, onComplete:function () {
+                                                    calculatePositionsphp(<?php echo $technology['Technology']['id']; ?>);
+                                                }
+                                                });
+                                            </script>
+>>>>>>> df72fb085f7af8a1206f1f63b3881aa79c5f1aef
 
                                             <?php
                                         }

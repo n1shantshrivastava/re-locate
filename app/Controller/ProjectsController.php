@@ -39,7 +39,7 @@ class ProjectsController extends AppController {
         if ($this->loggedInUserId() != '' && $this->loggedInUserRole() == 1) {
             $this->redirect(array('action' => 'all_projects'));
         } else {
-            $this->redirect(array('action' => 'login'));
+            $this->redirect(array('controller'=>'users', 'action' => 'login'));
         }
     }
 
@@ -53,6 +53,7 @@ class ProjectsController extends AppController {
         $this->set('projects', $this->paginate());
     }
 
+
     /**
      * view method
      *
@@ -64,8 +65,6 @@ class ProjectsController extends AppController {
         if (!$this->Project->exists()) {
             throw new NotFoundException(__('Invalid project'));
         }
-        //        $this->Project->recursive=2;
-        //        $project = $this->Project->read(null, $id);
         $project = $this->Project->getProjectDataById($id);
         $this->set(compact('project'));
     }
@@ -135,8 +134,26 @@ class ProjectsController extends AppController {
             $this->request->data['Project']['start_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['start_date']));
             $this->request->data['Project']['end_date'] = date('Y-m-d H:i:s', strtotime($this->request->data['Project']['end_date']));
 
-            $projectResourceRequirement = $this->request->data['ProjectResourceRequirements'];
             if ($this->Project->saveAll($this->request->data)) {
+
+                $projectResourceRequirement = $this->request->data['ProjectResourceRequirements'];
+                foreach ($projectResourceRequirement as $key => $value) {
+
+                    $technologyAlloted[] = $value['technology_id'];
+                }
+                $projectId=  $this->request->data['Project']['id'];
+                $technologyAlloted = array_unique($technologyAlloted);
+                if(!empty($technologyAlloted)){
+                    $this->Project->ProjectTechnology->deleteAll(array('ProjectTechnology.project_id'=>$projectId));
+                    foreach ($technologyAlloted as $alloted) {
+                        $this->Project->ProjectTechnology->create();
+                        if ($this->Project->ProjectTechnology->save(array('project_id' => $projectId, 'technology_id' => $alloted))) {
+                            $this->log('>>>> SUCCESS | ProjectTechnology Saved for ProjectId : ' . $projectId . "Technology Id : " . $alloted);
+                        } else {
+                            $this->log('>>>> FAILED | ProjectTechnology could not be Saved for ProjectId : ' . $projectId . "Technology Id : " . $alloted);
+                        }
+                    }
+                }
                 if ($this->Project->ProjectResourceRequirement->saveAll($projectResourceRequirement)) {
                     $this->log('>>>> SUCCESS | ProjectResourceRequirement data saved');
                 } else {
@@ -189,7 +206,6 @@ class ProjectsController extends AppController {
     public function add_project_resource() {
 
         $this->autoRender = false;
-        $respoceArray = array();
         if (!empty($this->request->data) && $this->request->data['user_id'] != "" && $this->request->data['project_id']) {
             $saveProjectUser = $this->Project->saveProjectUser($this->request->data);
             if ($saveProjectUser) {
@@ -202,5 +218,50 @@ class ProjectsController extends AppController {
             $respoceArray = array('status' => 'error', 'message' => 'Required fields are missing');
         }
         return json_encode($respoceArray);
+    }
+
+    public function project_stats(){
+        $projects = $this->Project->getActiveProjects();
+        $firstProject = $projects[0];
+
+        $technologiesWiseData = $this->Project->ProjectTechnology->Technology->getProjectAllocationStats($firstProject['Project']['id']);
+        $technologyData =  $this->getFormattedData($technologiesWiseData);
+
+        $this->set(compact('projects','technologyData'));
+    }
+
+    public function get_project_details() {
+        $this->autoRender = false;
+        $this->layout= false;
+        $technologyData = $this->Project->ProjectTechnology->Technology->getProjectAllocationStats($this->request->query['project_id']);
+        if(!empty($technologiesWiseData)){
+
+/*
+            $chartData = $this->getFormattedData($technologiesWiseData);
+
+            echo $chartData;*/
+        }else {
+           /* echo json_encode(array('status'=>'0'));*/
+        }
+        $technologyData = $this->getFormattedData($technologyData);
+        $this->set(compact('technologyData'));
+        echo $this->render('/Elements/project_stats_chart');
+        die;
+    }
+
+    private function getFormattedData($technologiesWiseData){
+        $technologiesWiseData = array_values($technologiesWiseData);
+        foreach($technologiesWiseData as $key => $technology){
+            unset($technology['id']);
+            $technologies[$key]= $technology['Technology'];
+        }
+        if(!empty($technologies)) {
+            $technologies = json_encode($technologies);
+        }else{
+            $technologies = json_encode(array());
+        }
+
+
+        return $technologies;
     }
 }

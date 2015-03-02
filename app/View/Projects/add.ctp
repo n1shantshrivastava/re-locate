@@ -4,7 +4,7 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
 <div class="projects form">
     <section id="forms">
         <div class="page-header">
-            <h1>Create Project</h1>
+            <h3>Create Project <a href="javascript:window.history.back();" class="pull-right backButton"></a></h3>
         </div>
 
         <div class="row">
@@ -19,7 +19,7 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
                         <label class="control-label" for="projectName">Project Name</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('project_name'); ?>
+                            <?php echo $this->Form->input('project_name', array('placeholder'=>'Enter Project Name')); ?>
                         </div>
                     </div>
 
@@ -27,7 +27,7 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
                         <label class="control-label" for="accountName">Account Name</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('account_name'); ?>
+                            <?php echo $this->Form->input('account_name', array('placeholder'=>'Enter Account Name')); ?>
                         </div>
                     </div>
 
@@ -35,7 +35,7 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
                         <label class="control-label" for="projectType">Project Type</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('project_type'); ?>
+                            <?php echo $this->Form->input('project_type', array('placeholder'=>'Enter Project Type')); ?>
                         </div>
                     </div>
 
@@ -43,7 +43,7 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
                         <label class="control-label" for="description">Description</label>
 
                         <div class="controls">
-                            <?php echo $this->Form->input('description'); ?>
+                            <?php echo $this->Form->input('description', array('placeholder'=>'Enter Description')); ?>
                         </div>
                     </div>
 
@@ -115,7 +115,8 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
                                     'options' => $percentages,
                                     'div' => false,
                                     'label' => false,
-                                    'empty' => 'Allocation percentage'));
+                                    'empty' => 'Allocation percentage'
+                                ));
                                 ?>
                         </span>
                             <span class="pull-left">
@@ -127,7 +128,8 @@ echo $this->Html->script(array('validations','projects/project-add'), false);
                                     ),
                                     'div' => false,
                                     'label' => false,
-                                    'empty' => 'Number of resources'));
+                                    'empty' => 'Number of resources'
+                                ));
                                 ?>
                         </span>
                         </div>
