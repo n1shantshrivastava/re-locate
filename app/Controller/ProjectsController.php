@@ -96,6 +96,7 @@ class ProjectsController extends AppController {
                 $technologyAlloted = array_unique($technologyAlloted);
 
                 foreach ($technologyAlloted as $alloted) {
+                    $this->Project->ProjectTechnology->create();
                     if ($this->Project->ProjectTechnology->save(array('project_id' => $projectId, 'technology_id' => $alloted))) {
                         $this->log('>>>> SUCCESS | ProjectTechnology Saved for ProjectId : ' . $projectId . "Technology Id : " . $alloted);
                     } else {
@@ -172,8 +173,7 @@ class ProjectsController extends AppController {
         $this->redirect(array('action' => 'index'));
     }
 
-    public
-    function getAllTechnologies() {
+    public function getAllTechnologies() {
         $this->autoRender = false;
         if ($this->request->is('get') && empty($this->request->data)) {
             $technologies = array();
@@ -186,8 +186,7 @@ class ProjectsController extends AppController {
         }
     }
 
-    public
-    function add_project_resource() {
+    public function add_project_resource() {
 
         $this->autoRender = false;
         $respoceArray = array();

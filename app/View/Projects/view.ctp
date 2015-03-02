@@ -53,7 +53,7 @@
                                                     }
                                                 ?>
                                                 <script type="text/javascript" >
-                                                    TweenLite.to($("#b"<?php echo $technology['Technology']['id']; ?>), 0.2, {css:{width:150, height:150, marginLeft:-20, marginTop:-20}, ease:Power2.easeOut, onComplete:function () {
+                                                    TweenLite.to($("#b<?php echo $technology['Technology']['id']; ?>"), 0.2, {css:{width:150, height:150, marginLeft:-20, marginTop:-20}, ease:Power2.easeOut, onComplete:function () {
                                                         calculatePositionsphp(<?php echo $technology['Technology']['id']; ?>);
                                                     }
                                                     });

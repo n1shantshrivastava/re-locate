@@ -47,56 +47,6 @@
                     <?php
                 }
                 ?>
-                <div class="form-actions">
-                    <h3><?php echo 'Needlepoint'; ?></h3>
-                    <table class="table table-bordered table-striped table-hover">
-                        <tr>
-                            <td>Richa Sharma</td>
-                            <td>PHP</td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td>Richa Sharma</td>
-                            <td>PHP</td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td>Richa Sharma</td>
-                            <td>PHP</td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td>Richa Sharma</td>
-                            <td>PHP</td>
-                            <td>100%</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="form-actions">
-                    <h3><?php echo 'Needlepoint'; ?></h3>
-                    <table class="table table-bordered table-striped table-hover">
-                        <tr>
-                            <td>Richa Sharma</td>
-                            <td>PHP</td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td>Richa Sharma</td>
-                            <td>PHP</td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td>Richa Sharma</td>
-                            <td>PHP</td>
-                            <td>100%</td>
-                        </tr>
-                        <tr>
-                            <td>Richa Sharma</td>
-                            <td>PHP</td>
-                            <td>100%</td>
-                        </tr>
-                    </table>
-                </div>
             </div>
         </div>
     </section>

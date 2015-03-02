@@ -40,7 +40,10 @@ switch($tab){
                     );
                     ?>
                 </ul>
-                    <?php } ?>
+                    <?php
+            }
+                if($loggedInUserId) {
+                ?>
                 <ul id="main-menu-right" class="nav pull-right">
                     <li id="preview-menu" class="dropdown">
                         <a href="javascript:void(0)" data-toggle="dropdown" class="dropdown-toggle">Hello <?php echo $loggedInUserFirstName . ' ' . $loggedInUserLastName; ?> <b class="caret"></b></a>
@@ -57,6 +60,7 @@ switch($tab){
                         </ul>
                     </li>
                 </ul>
+                    <?php } ?>
             </div>
         </div>
     </div>

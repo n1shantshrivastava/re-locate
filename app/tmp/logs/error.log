@@ -4295,3 +4295,138 @@
 
 )
 
+2013-08-03 23:05:07 Error: >>>> SUCCESS : Saved Project Data
+2013-08-03 23:05:07 Error: >>>> SUCCESS | ProjectTechnology Saved for ProjectId : 1Technology Id : 1
+2013-08-03 23:05:07 Error: >>>> SUCCESS | ProjectTechnology Saved for ProjectId : 1Technology Id : 7
+2013-08-03 23:05:07 Error: >>>> SUCCESS : Saved ProjectResourceRequirement Data
+2013-08-03 23:05:51 Error: 
+2013-08-03 23:05:54 Error: 
+2013-08-03 23:05:56 Error: 
+2013-08-03 23:08:26 Error: >>>> SUCCESS : Saved Project Data
+2013-08-03 23:11:35 Error: >>>> SUCCESS : Saved Project Data
+2013-08-03 23:11:35 Error: >>>> SUCCESS | ProjectTechnology Saved for ProjectId : 1Technology Id : 1
+2013-08-03 23:11:35 Error: >>>> SUCCESS | ProjectTechnology Saved for ProjectId : 1Technology Id : 2
+2013-08-03 23:11:35 Error: >>>> SUCCESS : Saved ProjectResourceRequirement Data
+2013-08-03 23:12:30 Error: 
+2013-08-03 23:12:47 Error: 
+2013-08-03 23:12:50 Error: 
+2013-08-03 23:12:56 Error: 
+2013-08-03 23:13:02 Error: 
+2013-08-03 23:13:06 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 5
+            [project_id] => 1
+            [user_id] => 52
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2013-08-03 23:13:02
+            [modified] => 2013-08-03 23:13:02
+        )
+
+)
+
+2013-08-03 23:13:11 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 3
+            [project_id] => 1
+            [user_id] => 40
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2013-08-03 23:12:50
+            [modified] => 2013-08-03 23:12:50
+        )
+
+)
+
+2013-08-03 23:13:46 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 1
+            [project_id] => 1
+            [user_id] => 91
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2013-08-03 23:12:30
+            [modified] => 2013-08-03 23:12:30
+        )
+
+)
+
+2013-08-03 23:14:01 Error: 
+2013-08-03 23:15:10 Error: >>>> SUCCESS : Saved Project Data
+2013-08-03 23:15:10 Error: >>>> SUCCESS | ProjectTechnology Saved for ProjectId : 2Technology Id : 1
+2013-08-03 23:15:10 Error: >>>> SUCCESS | ProjectTechnology Saved for ProjectId : 2Technology Id : 7
+2013-08-03 23:15:10 Error: >>>> SUCCESS : Saved ProjectResourceRequirement Data
+2013-08-03 23:35:46 Error: 
+2013-08-05 05:54:20 Error: >>>> SUCCESS : Saved Project Data
+2013-08-05 05:54:20 Error: >>>> SUCCESS | ProjectTechnology Saved for ProjectId : 3Technology Id : 1
+2013-08-05 05:54:20 Error: >>>> SUCCESS | ProjectTechnology Saved for ProjectId : 3Technology Id : 8
+2013-08-05 05:54:20 Error: >>>> SUCCESS | ProjectTechnology Saved for ProjectId : 3Technology Id : 7
+2013-08-05 05:54:20 Error: >>>> SUCCESS | ProjectTechnology Saved for ProjectId : 3Technology Id : 10
+2013-08-05 05:54:20 Error: >>>> SUCCESS : Saved ProjectResourceRequirement Data
+2013-08-05 05:54:30 Error: 
+2013-08-05 05:54:35 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 8
+            [project_id] => 3
+            [user_id] => 93
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2013-08-05 05:54:30
+            [modified] => 2013-08-05 05:54:30
+        )
+
+)
+
+2013-08-05 05:54:37 Error: 
+2013-08-05 05:54:40 Error: 
+2013-08-05 05:54:46 Error: 
+2013-08-05 05:54:48 Error: 
+2013-08-05 05:54:52 Error: 
+2014-01-27 08:06:13 Error: 
+2014-01-27 08:06:20 Error: 
+2014-01-27 08:08:41 Error: >>>> SUCCESS | ProjectResourceRequirement data saved
+2014-01-27 08:20:00 Error: 
+2014-01-27 08:20:06 Error: Array
+(
+    [ProjectsUser] => Array
+        (
+            [id] => 16
+            [project_id] => 3
+            [user_id] => 82
+            [percentage_of_allocation] => 
+            [salary_cost] => 
+            [cost_a] => 
+            [cost_b] => 
+            [start] => 0000-00-00 00:00:00
+            [end] => 0000-00-00 00:00:00
+            [created] => 2014-01-27 08:20:00
+            [modified] => 2014-01-27 08:20:00
+        )
+
+)
+
+2014-01-27 08:21:19 Error: >>>> SUCCESS | ProjectResourceRequirement data saved
